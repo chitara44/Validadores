@@ -360,8 +360,7 @@ namespace WebApplication1.entities
                 var c = new sorteos.Cu();
                 var q = new sorteos.Qu();
                 var se = new sorteos.Se();
-
-
+            
                 i.Indi.Add(this.Num1.ToString());
                 i.Indi.Add(this.Num2.ToString());
                 i.Indi.Add(this.Num3.ToString());
