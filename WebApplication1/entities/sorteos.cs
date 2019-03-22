@@ -88,6 +88,44 @@ namespace WebApplication1.entities
             set { enUso = value; }
         }
 
+        private List<string> indi = null;
+        public List<string> Indi
+        {
+            get { return indi; }
+            set { indi = value; }
+        }
+
+        private List<string> dupl = null;
+        public List<string> Dupl
+        {
+            get { return dupl; }
+            set { dupl = value; }
+        }
+        private List<string> terc = null;
+        public List<string> Terc
+        {
+            get { return terc; }
+            set { terc = CreaListaTernas(); }
+        }
+        private List<string> cuar = null;
+        public List<string> Cuar
+        {
+            get { return cuar; }
+            set { cuar = CreaListaCuartetos(); }
+        }
+        private List<string> quin = null;
+        public List<string> Quin
+        {
+            get { return quin; }
+            set { quin = CreaListaQuintetos(); }
+        }
+        private List<string> sext = null;
+        public List<string> Sext
+        {
+            get { return sext; }
+            set { sext = CreaListaSextetos(); }
+        }
+
         public class Si : sorteos
         {
             private int idLastSorteo = 0;
@@ -107,23 +145,6 @@ namespace WebApplication1.entities
             {
                 get { return cantCaidos; }
                 set { cantCaidos = value; }
-            }
-            private List<string> indi = null;
-            public List<string> Indi
-            {
-                get { return indi; }
-                set { indi = CreaListaIndis(); }
-            }
-            List<string> CreaListaIndis()
-            {
-                List<string> lI = null;
-                lI.Add(num1.ToString());
-                lI.Add(num2.ToString());
-                lI.Add(num3.ToString());
-                lI.Add(num4.ToString());
-                lI.Add(num5.ToString());
-                lI.Add(sb.ToString());
-                return lI;
             }
         }
 
@@ -148,32 +169,6 @@ namespace WebApplication1.entities
                 get { return cantCaidos; }
                 set { cantCaidos = value; }
             }
-            private List<string> dupl = null;
-            public List<string> Dupl
-            {
-                get { return dupl; }
-                set { dupl = CreaListaDuplas(); }
-            }
-            List<string> CreaListaDuplas()
-            {
-                List<string> lD = null;
-                lD.Add(num1.ToString() + num2.ToString());
-                lD.Add(num1.ToString() + num3.ToString());
-                lD.Add(num1.ToString() + num4.ToString());
-                lD.Add(num1.ToString() + num5.ToString());
-                lD.Add(num1.ToString() + sb.ToString());
-                lD.Add(num2.ToString() + num3.ToString());
-                lD.Add(num2.ToString() + num4.ToString());
-                lD.Add(num2.ToString() + num5.ToString());
-                lD.Add(num2.ToString() + sb.ToString());
-                lD.Add(num3.ToString() + num4.ToString());
-                lD.Add(num3.ToString() + num5.ToString());
-                lD.Add(num3.ToString() + sb.ToString());
-                lD.Add(num4.ToString() + num5.ToString());
-                lD.Add(num4.ToString() + sb.ToString());
-                lD.Add(num5.ToString() + sb.ToString());
-                return lD;
-            }
         }
 
         public class Te:sorteos
@@ -195,32 +190,6 @@ namespace WebApplication1.entities
             {
                 get { return cantCaidos; }
                 set { cantCaidos = value; }
-            }
-            private List<string> terc = null;
-            public List<string> Terc
-            {
-                get { return terc; }
-                set { terc = CreaListaTernas(); }
-            }
-            List<string> CreaListaTernas()
-            {
-                List<string> lT = null;
-                lT.Add(num1.ToString() + num2.ToString() + num3.ToString());
-                lT.Add(num1.ToString() + num2.ToString() + num4.ToString());
-                lT.Add(num1.ToString() + num2.ToString() + num5.ToString());
-                lT.Add(num1.ToString() + num2.ToString() + sb.ToString());
-                lT.Add(num1.ToString() + num3.ToString() + num4.ToString());
-                lT.Add(num1.ToString() + num3.ToString() + num5.ToString());
-                lT.Add(num1.ToString() + num3.ToString() + sb.ToString());
-                lT.Add(num1.ToString() + num4.ToString() + num5.ToString());
-                lT.Add(num1.ToString() + num4.ToString() + sb.ToString());
-                lT.Add(num2.ToString() + num3.ToString() + num4.ToString());
-                lT.Add(num2.ToString() + num3.ToString() + num5.ToString());
-                lT.Add(num2.ToString() + num3.ToString() + sb.ToString());
-                lT.Add(num3.ToString() + num4.ToString() + num5.ToString());
-                lT.Add(num3.ToString() + num4.ToString() + sb.ToString());
-                lT.Add(num4.ToString() + num5.ToString() + sb.ToString());
-                return lT;
             }
         }
 
@@ -244,31 +213,6 @@ namespace WebApplication1.entities
                 get { return cantCaidos; }
                 set { cantCaidos = value; }
             }
-            private List<string> cuar = null;
-            public List<string> Cuar
-            {
-                get { return cuar; }
-                set { cuar = CreaListaCuartetos(); }
-            }
-            List<string> CreaListaCuartetos()
-            {
-                List<string> lC = null;
-                lC.Add(num1.ToString() + num2.ToString() + num3.ToString() + num4.ToString());
-                lC.Add(num1.ToString() + num2.ToString() + num3.ToString() + num5.ToString());
-                lC.Add(num1.ToString() + num2.ToString() + num3.ToString() + sb.ToString());
-                lC.Add(num1.ToString() + num2.ToString() + num4.ToString() + num5.ToString());
-                lC.Add(num1.ToString() + num2.ToString() + num4.ToString() + sb.ToString());
-                lC.Add(num1.ToString() + num2.ToString() + num5.ToString() + sb.ToString());
-                lC.Add(num1.ToString() + num3.ToString() + num4.ToString() + num5.ToString());
-                lC.Add(num1.ToString() + num3.ToString() + num4.ToString() + sb.ToString());
-                lC.Add(num1.ToString() + num3.ToString() + num5.ToString() + sb.ToString());
-                lC.Add(num1.ToString() + num4.ToString() + num5.ToString() + sb.ToString());
-                lC.Add(num2.ToString() + num3.ToString() + num4.ToString() + num5.ToString());
-                lC.Add(num2.ToString() + num3.ToString() + num4.ToString() + sb.ToString());
-                lC.Add(num2.ToString() + num4.ToString() + num5.ToString() + sb.ToString());
-                lC.Add(num3.ToString() + num4.ToString() + num5.ToString() + sb.ToString());
-                return lC;
-            }
         }
 
         public class Qu:sorteos
@@ -290,23 +234,6 @@ namespace WebApplication1.entities
             {
                 get { return cantCaidos; }
                 set { cantCaidos = value; }
-            }
-            private List<string> quin = null;
-            public List<string> Quin
-            {
-                get { return quin; }
-                set { quin = CreaListaQuintetos(); }
-            }
-            List<string> CreaListaQuintetos()
-            {
-                List<string> lQ = null;
-                lQ.Add(num1.ToString() + num2.ToString() + num3.ToString() + num4.ToString() + num5.ToString());
-                lQ.Add(num1.ToString() + num2.ToString() + num3.ToString() + num4.ToString() + sb.ToString());
-                lQ.Add(num1.ToString() + num2.ToString() + num3.ToString() + num5.ToString() + sb.ToString());
-                lQ.Add(num1.ToString() + num2.ToString() + num4.ToString() + num5.ToString() + sb.ToString());
-                lQ.Add(num1.ToString() + num3.ToString() + num4.ToString() + num5.ToString() + sb.ToString());
-                lQ.Add(num2.ToString() + num3.ToString() + num4.ToString() + num5.ToString() + sb.ToString());
-                return lQ;
             }
         }
 
@@ -338,18 +265,8 @@ namespace WebApplication1.entities
                 set { behaviour = value; }
             }
 
-            private List<string> sext = null;
-            public List<string> Sext
-            {
-                get { return sext; }
-                set { sext = CreaListaSextetos(); }
-            }
-            List<string> CreaListaSextetos()
-            {
-                List<string> lS = null;
-                lS.Add(num1.ToString() + num2.ToString() + num3.ToString() + num4.ToString() + num5.ToString() + sb.ToString());
-                return lS;
-            }
+
+
         }
 
         public sorteos()
@@ -360,82 +277,178 @@ namespace WebApplication1.entities
                 var c = new sorteos.Cu();
                 var q = new sorteos.Qu();
                 var se = new sorteos.Se();
+          
             
-                i.Indi.Add(this.Num1.ToString());
-                i.Indi.Add(this.Num2.ToString());
-                i.Indi.Add(this.Num3.ToString());
-                i.Indi.Add(this.Num4.ToString());
-                i.Indi.Add(this.Num5.ToString());
-                i.Indi.Add(this.Sb.ToString());
-
-                d.Dupl.Add(this.Num1.ToString() + '|' + this.Num2.ToString());
-                d.Dupl.Add(this.Num1.ToString() + '|' + this.Num3.ToString());
-                d.Dupl.Add(this.Num1.ToString() + '|' + this.Num4.ToString());
-                d.Dupl.Add(this.Num1.ToString() + '|' + this.Num5.ToString());
-                d.Dupl.Add(this.Num1.ToString() + '|' + this.Sb.ToString());
-                d.Dupl.Add(this.Num2.ToString() + '|' + this.Num3.ToString());
-                d.Dupl.Add(this.Num2.ToString() + '|' + this.Num4.ToString());
-                d.Dupl.Add(this.Num2.ToString() + '|' + this.Num5.ToString());
-                d.Dupl.Add(this.Num2.ToString() + '|' + this.Sb.ToString());
-                d.Dupl.Add(this.Num3.ToString() + '|' + this.Num4.ToString());
-                d.Dupl.Add(this.Num3.ToString() + '|' + this.Num5.ToString());
-                d.Dupl.Add(this.Num3.ToString() + '|' + this.Sb.ToString());
-                d.Dupl.Add(this.Num4.ToString() + '|' + this.Num5.ToString());
-                d.Dupl.Add(this.Num4.ToString() + '|' + this.Sb.ToString());
-                d.Dupl.Add(this.Num5.ToString() + '|' + this.Sb.ToString());
 
 
+                this.Indi.Add(this.Num1.ToString());
+                this.Indi.Add(this.Num2.ToString());
+                this.Indi.Add(this.Num3.ToString());
+                this.Indi.Add(this.Num4.ToString());
+                this.Indi.Add(this.Num5.ToString());
+                this.Indi.Add(this.Sb.ToString());
 
-                t.Terc.Add(this.Num1.ToString() + '|' + this.Num2.ToString() + '|' + this.Num3.ToString());
-                t.Terc.Add(this.Num1.ToString() + '|' + this.Num2.ToString() + '|' + this.Num4.ToString());
-                t.Terc.Add(this.Num1.ToString() + '|' + this.Num2.ToString() + '|' + this.Num5.ToString());
-                t.Terc.Add(this.Num1.ToString() + '|' + this.Num2.ToString() + '|' + this.Sb.ToString());
-                t.Terc.Add(this.Num1.ToString() + '|' + this.Num3.ToString() + '|' + this.Num4.ToString());
-                t.Terc.Add(this.Num1.ToString() + '|' + this.Num3.ToString() + '|' + this.Num5.ToString());
-                t.Terc.Add(this.Num1.ToString() + '|' + this.Num3.ToString() + '|' + this.Sb.ToString());
-                t.Terc.Add(this.Num1.ToString() + '|' + this.Num4.ToString() + '|' + this.Num5.ToString());
-                t.Terc.Add(this.Num1.ToString() + '|' + this.Num4.ToString() + '|' + this.Sb.ToString());
-                t.Terc.Add(this.Num2.ToString() + '|' + this.Num3.ToString() + '|' + this.Num4.ToString());
-                t.Terc.Add(this.Num2.ToString() + '|' + this.Num3.ToString() + '|' + this.Num5.ToString());
-                t.Terc.Add(this.Num2.ToString() + '|' + this.Num3.ToString() + '|' + this.Sb.ToString());
-                t.Terc.Add(this.Num2.ToString() + '|' + this.Num4.ToString() + '|' + this.Num5.ToString());
-                t.Terc.Add(this.Num2.ToString() + '|' + this.Num4.ToString() + '|' + this.Sb.ToString());
-                t.Terc.Add(this.Num2.ToString() + '|' + this.Num5.ToString() + '|' + this.Sb.ToString());
-                t.Terc.Add(this.Num3.ToString() + '|' + this.Num4.ToString() + '|' + this.Num5.ToString());
-                t.Terc.Add(this.Num3.ToString() + '|' + this.Num4.ToString() + '|' + this.Sb.ToString());
-                t.Terc.Add(this.Num3.ToString() + '|' + this.Num5.ToString() + '|' + this.Sb.ToString());
-                t.Terc.Add(this.Num4.ToString() + '|' + this.Num5.ToString() + '|' + this.Sb.ToString());
-
-
-                c.Cuar.Add(this.Num1.ToString() + '|' + this.Num2.ToString() + '|' + this.Num3.ToString() + '|' + this.Num4.ToString());
-                c.Cuar.Add(this.Num1.ToString() + '|' + this.Num2.ToString() + '|' + this.Num3.ToString() + '|' + this.Num5.ToString());
-                c.Cuar.Add(this.Num1.ToString() + '|' + this.Num2.ToString() + '|' + this.Num3.ToString() + '|' + this.Sb.ToString());
-                c.Cuar.Add(this.Num1.ToString() + '|' + this.Num2.ToString() + '|' + this.Num4.ToString() + '|' + this.Num5.ToString());
-                c.Cuar.Add(this.Num1.ToString() + '|' + this.Num2.ToString() + '|' + this.Num4.ToString() + '|' + this.Sb.ToString());
-                c.Cuar.Add(this.Num1.ToString() + '|' + this.Num2.ToString() + '|' + this.Num5.ToString() + '|' + this.Sb.ToString());
-                c.Cuar.Add(this.Num1.ToString() + '|' + this.Num3.ToString() + '|' + this.Num4.ToString() + '|' + this.Num5.ToString());
-                c.Cuar.Add(this.Num1.ToString() + '|' + this.Num3.ToString() + '|' + this.Num4.ToString() + '|' + this.Sb.ToString());
-                c.Cuar.Add(this.Num1.ToString() + '|' + this.Num3.ToString() + '|' + this.Num5.ToString() + '|' + this.Sb.ToString());
-                c.Cuar.Add(this.Num1.ToString() + '|' + this.Num4.ToString() + '|' + this.Num5.ToString() + '|' + this.Sb.ToString());
-                c.Cuar.Add(this.Num2.ToString() + '|' + this.Num3.ToString() + '|' + this.Num4.ToString() + '|' + this.Num5.ToString());
-                c.Cuar.Add(this.Num2.ToString() + '|' + this.Num3.ToString() + '|' + this.Num4.ToString() + '|' + this.Sb.ToString());
-                c.Cuar.Add(this.Num2.ToString() + '|' + this.Num3.ToString() + '|' + this.Num5.ToString() + '|' + this.Sb.ToString());
-                c.Cuar.Add(this.Num2.ToString() + '|' + this.Num4.ToString() + '|' + this.Num5.ToString() + '|' + this.Sb.ToString());
-                c.Cuar.Add(this.Num3.ToString() + '|' + this.Num4.ToString() + '|' + this.Num5.ToString() + '|' + this.Sb.ToString());
-
-                q.Quin.Add(this.Num1.ToString() + '|' + this.Num2.ToString() + '|' + this.Num3.ToString() + '|' + this.Num4.ToString() + '|' + this.Num5.ToString());
-                q.Quin.Add(this.Num1.ToString() + '|' + this.Num2.ToString() + '|' + this.Num3.ToString() + '|' + this.Num4.ToString() + '|' + this.Sb.ToString());
-                q.Quin.Add(this.Num1.ToString() + '|' + this.Num2.ToString() + '|' + this.Num3.ToString() + '|' + this.Num5.ToString() + '|' + this.Sb.ToString());
-                q.Quin.Add(this.Num1.ToString() + '|' + this.Num2.ToString() + '|' + this.Num4.ToString() + '|' + this.Num5.ToString() + '|' + this.Sb.ToString());
-                q.Quin.Add(this.Num1.ToString() + '|' + this.Num3.ToString() + '|' + this.Num4.ToString() + '|' + this.Num5.ToString() + '|' + this.Sb.ToString());
-                q.Quin.Add(this.Num2.ToString() + '|' + this.Num3.ToString() + '|' + this.Num4.ToString() + '|' + this.Num5.ToString() + '|' + this.Sb.ToString());
+                this.Dupl.Add(this.Num1.ToString() + '|' + this.Num2.ToString());
+                this.Dupl.Add(this.Num1.ToString() + '|' + this.Num3.ToString());
+                this.Dupl.Add(this.Num1.ToString() + '|' + this.Num4.ToString());
+                this.Dupl.Add(this.Num1.ToString() + '|' + this.Num5.ToString());
+                this.Dupl.Add(this.Num1.ToString() + '|' + this.Sb.ToString());
+                this.Dupl.Add(this.Num2.ToString() + '|' + this.Num3.ToString());
+                this.Dupl.Add(this.Num2.ToString() + '|' + this.Num4.ToString());
+                this.Dupl.Add(this.Num2.ToString() + '|' + this.Num5.ToString());
+                this.Dupl.Add(this.Num2.ToString() + '|' + this.Sb.ToString());
+                this.Dupl.Add(this.Num3.ToString() + '|' + this.Num4.ToString());
+                this.Dupl.Add(this.Num3.ToString() + '|' + this.Num5.ToString());
+                this.Dupl.Add(this.Num3.ToString() + '|' + this.Sb.ToString());
+                this.Dupl.Add(this.Num4.ToString() + '|' + this.Num5.ToString());
+                this.Dupl.Add(this.Num4.ToString() + '|' + this.Sb.ToString());
+                this.Dupl.Add(this.Num5.ToString() + '|' + this.Sb.ToString());
 
 
-                se.Sext.Add(this.Num1.ToString() + '|' + this.Num2.ToString() + '|' + this.Num3.ToString() + '|' + this.Num4.ToString() + '|' + this.Num5.ToString() + '|' + this.Sb.ToString());
+
+                this.Terc.Add(this.Num1.ToString() + '|' + this.Num2.ToString() + '|' + this.Num3.ToString());
+                this.Terc.Add(this.Num1.ToString() + '|' + this.Num2.ToString() + '|' + this.Num4.ToString());
+                this.Terc.Add(this.Num1.ToString() + '|' + this.Num2.ToString() + '|' + this.Num5.ToString());
+                this.Terc.Add(this.Num1.ToString() + '|' + this.Num2.ToString() + '|' + this.Sb.ToString());
+                this.Terc.Add(this.Num1.ToString() + '|' + this.Num3.ToString() + '|' + this.Num4.ToString());
+                this.Terc.Add(this.Num1.ToString() + '|' + this.Num3.ToString() + '|' + this.Num5.ToString());
+                this.Terc.Add(this.Num1.ToString() + '|' + this.Num3.ToString() + '|' + this.Sb.ToString());
+                this.Terc.Add(this.Num1.ToString() + '|' + this.Num4.ToString() + '|' + this.Num5.ToString());
+                this.Terc.Add(this.Num1.ToString() + '|' + this.Num4.ToString() + '|' + this.Sb.ToString());
+                this.Terc.Add(this.Num2.ToString() + '|' + this.Num3.ToString() + '|' + this.Num4.ToString());
+                this.Terc.Add(this.Num2.ToString() + '|' + this.Num3.ToString() + '|' + this.Num5.ToString());
+                this.Terc.Add(this.Num2.ToString() + '|' + this.Num3.ToString() + '|' + this.Sb.ToString());
+                this.Terc.Add(this.Num2.ToString() + '|' + this.Num4.ToString() + '|' + this.Num5.ToString());
+                this.Terc.Add(this.Num2.ToString() + '|' + this.Num4.ToString() + '|' + this.Sb.ToString());
+                this.Terc.Add(this.Num2.ToString() + '|' + this.Num5.ToString() + '|' + this.Sb.ToString());
+                this.Terc.Add(this.Num3.ToString() + '|' + this.Num4.ToString() + '|' + this.Num5.ToString());
+                this.Terc.Add(this.Num3.ToString() + '|' + this.Num4.ToString() + '|' + this.Sb.ToString());
+                this.Terc.Add(this.Num3.ToString() + '|' + this.Num5.ToString() + '|' + this.Sb.ToString());
+                this.Terc.Add(this.Num4.ToString() + '|' + this.Num5.ToString() + '|' + this.Sb.ToString());
+
+
+                this.Cuar.Add(this.Num1.ToString() + '|' + this.Num2.ToString() + '|' + this.Num3.ToString() + '|' + this.Num4.ToString());
+                this.Cuar.Add(this.Num1.ToString() + '|' + this.Num2.ToString() + '|' + this.Num3.ToString() + '|' + this.Num5.ToString());
+                this.Cuar.Add(this.Num1.ToString() + '|' + this.Num2.ToString() + '|' + this.Num3.ToString() + '|' + this.Sb.ToString());
+                this.Cuar.Add(this.Num1.ToString() + '|' + this.Num2.ToString() + '|' + this.Num4.ToString() + '|' + this.Num5.ToString());
+                this.Cuar.Add(this.Num1.ToString() + '|' + this.Num2.ToString() + '|' + this.Num4.ToString() + '|' + this.Sb.ToString());
+                this.Cuar.Add(this.Num1.ToString() + '|' + this.Num2.ToString() + '|' + this.Num5.ToString() + '|' + this.Sb.ToString());
+                this.Cuar.Add(this.Num1.ToString() + '|' + this.Num3.ToString() + '|' + this.Num4.ToString() + '|' + this.Num5.ToString());
+                this.Cuar.Add(this.Num1.ToString() + '|' + this.Num3.ToString() + '|' + this.Num4.ToString() + '|' + this.Sb.ToString());
+                this.Cuar.Add(this.Num1.ToString() + '|' + this.Num3.ToString() + '|' + this.Num5.ToString() + '|' + this.Sb.ToString());
+                this.Cuar.Add(this.Num1.ToString() + '|' + this.Num4.ToString() + '|' + this.Num5.ToString() + '|' + this.Sb.ToString());
+                this.Cuar.Add(this.Num2.ToString() + '|' + this.Num3.ToString() + '|' + this.Num4.ToString() + '|' + this.Num5.ToString());
+                this.Cuar.Add(this.Num2.ToString() + '|' + this.Num3.ToString() + '|' + this.Num4.ToString() + '|' + this.Sb.ToString());
+                this.Cuar.Add(this.Num2.ToString() + '|' + this.Num3.ToString() + '|' + this.Num5.ToString() + '|' + this.Sb.ToString());
+                this.Cuar.Add(this.Num2.ToString() + '|' + this.Num4.ToString() + '|' + this.Num5.ToString() + '|' + this.Sb.ToString());
+                this.Cuar.Add(this.Num3.ToString() + '|' + this.Num4.ToString() + '|' + this.Num5.ToString() + '|' + this.Sb.ToString());
+
+                this.Quin.Add(this.Num1.ToString() + '|' + this.Num2.ToString() + '|' + this.Num3.ToString() + '|' + this.Num4.ToString() + '|' + this.Num5.ToString());
+                this.Quin.Add(this.Num1.ToString() + '|' + this.Num2.ToString() + '|' + this.Num3.ToString() + '|' + this.Num4.ToString() + '|' + this.Sb.ToString());
+                this.Quin.Add(this.Num1.ToString() + '|' + this.Num2.ToString() + '|' + this.Num3.ToString() + '|' + this.Num5.ToString() + '|' + this.Sb.ToString());
+                this.Quin.Add(this.Num1.ToString() + '|' + this.Num2.ToString() + '|' + this.Num4.ToString() + '|' + this.Num5.ToString() + '|' + this.Sb.ToString());
+                this.Quin.Add(this.Num1.ToString() + '|' + this.Num3.ToString() + '|' + this.Num4.ToString() + '|' + this.Num5.ToString() + '|' + this.Sb.ToString());
+                this.Quin.Add(this.Num2.ToString() + '|' + this.Num3.ToString() + '|' + this.Num4.ToString() + '|' + this.Num5.ToString() + '|' + this.Sb.ToString());
+
+
+                this.Sext.Add(this.Num1.ToString() + '|' + this.Num2.ToString() + '|' + this.Num3.ToString() + '|' + this.Num4.ToString() + '|' + this.Num5.ToString() + '|' + this.Sb.ToString());
 
 
                 
           
+        }
+
+        List<string> CreaListaIndis()
+        {
+            List<string> lI = null;
+            lI.Add(num1.ToString());
+            lI.Add(num2.ToString());
+            lI.Add(num3.ToString());
+            lI.Add(num4.ToString());
+            lI.Add(num5.ToString());
+            lI.Add(sb.ToString());
+            return lI;
+        }
+
+        List<string> CreaListaDuplas()
+        {
+            List<string> lD = null;
+            lD.Add(num1.ToString() + num2.ToString());
+            lD.Add(num1.ToString() + num3.ToString());
+            lD.Add(num1.ToString() + num4.ToString());
+            lD.Add(num1.ToString() + num5.ToString());
+            lD.Add(num1.ToString() + sb.ToString());
+            lD.Add(num2.ToString() + num3.ToString());
+            lD.Add(num2.ToString() + num4.ToString());
+            lD.Add(num2.ToString() + num5.ToString());
+            lD.Add(num2.ToString() + sb.ToString());
+            lD.Add(num3.ToString() + num4.ToString());
+            lD.Add(num3.ToString() + num5.ToString());
+            lD.Add(num3.ToString() + sb.ToString());
+            lD.Add(num4.ToString() + num5.ToString());
+            lD.Add(num4.ToString() + sb.ToString());
+            lD.Add(num5.ToString() + sb.ToString());
+            return lD;
+        }
+
+        List<string> CreaListaTernas()
+        {
+            List<string> lT = null;
+            lT.Add(num1.ToString() + num2.ToString() + num3.ToString());
+            lT.Add(num1.ToString() + num2.ToString() + num4.ToString());
+            lT.Add(num1.ToString() + num2.ToString() + num5.ToString());
+            lT.Add(num1.ToString() + num2.ToString() + sb.ToString());
+            lT.Add(num1.ToString() + num3.ToString() + num4.ToString());
+            lT.Add(num1.ToString() + num3.ToString() + num5.ToString());
+            lT.Add(num1.ToString() + num3.ToString() + sb.ToString());
+            lT.Add(num1.ToString() + num4.ToString() + num5.ToString());
+            lT.Add(num1.ToString() + num4.ToString() + sb.ToString());
+            lT.Add(num2.ToString() + num3.ToString() + num4.ToString());
+            lT.Add(num2.ToString() + num3.ToString() + num5.ToString());
+            lT.Add(num2.ToString() + num3.ToString() + sb.ToString());
+            lT.Add(num3.ToString() + num4.ToString() + num5.ToString());
+            lT.Add(num3.ToString() + num4.ToString() + sb.ToString());
+            lT.Add(num4.ToString() + num5.ToString() + sb.ToString());
+            return lT;
+        }
+
+        List<string> CreaListaCuartetos()
+        {
+            List<string> lC = null;
+            lC.Add(num1.ToString() + num2.ToString() + num3.ToString() + num4.ToString());
+            lC.Add(num1.ToString() + num2.ToString() + num3.ToString() + num5.ToString());
+            lC.Add(num1.ToString() + num2.ToString() + num3.ToString() + sb.ToString());
+            lC.Add(num1.ToString() + num2.ToString() + num4.ToString() + num5.ToString());
+            lC.Add(num1.ToString() + num2.ToString() + num4.ToString() + sb.ToString());
+            lC.Add(num1.ToString() + num2.ToString() + num5.ToString() + sb.ToString());
+            lC.Add(num1.ToString() + num3.ToString() + num4.ToString() + num5.ToString());
+            lC.Add(num1.ToString() + num3.ToString() + num4.ToString() + sb.ToString());
+            lC.Add(num1.ToString() + num3.ToString() + num5.ToString() + sb.ToString());
+            lC.Add(num1.ToString() + num4.ToString() + num5.ToString() + sb.ToString());
+            lC.Add(num2.ToString() + num3.ToString() + num4.ToString() + num5.ToString());
+            lC.Add(num2.ToString() + num3.ToString() + num4.ToString() + sb.ToString());
+            lC.Add(num2.ToString() + num4.ToString() + num5.ToString() + sb.ToString());
+            lC.Add(num3.ToString() + num4.ToString() + num5.ToString() + sb.ToString());
+            return lC;
+        }
+
+        List<string> CreaListaQuintetos()
+        {
+            List<string> lQ = null;
+            lQ.Add(num1.ToString() + num2.ToString() + num3.ToString() + num4.ToString() + num5.ToString());
+            lQ.Add(num1.ToString() + num2.ToString() + num3.ToString() + num4.ToString() + sb.ToString());
+            lQ.Add(num1.ToString() + num2.ToString() + num3.ToString() + num5.ToString() + sb.ToString());
+            lQ.Add(num1.ToString() + num2.ToString() + num4.ToString() + num5.ToString() + sb.ToString());
+            lQ.Add(num1.ToString() + num3.ToString() + num4.ToString() + num5.ToString() + sb.ToString());
+            lQ.Add(num2.ToString() + num3.ToString() + num4.ToString() + num5.ToString() + sb.ToString());
+            return lQ;
+        }
+
+        List<string> CreaListaSextetos()
+        {
+            List<string> lS = null;
+            lS.Add(num1.ToString() + num2.ToString() + num3.ToString() + num4.ToString() + num5.ToString() + sb.ToString());
+            return lS;
         }
     }
 }
