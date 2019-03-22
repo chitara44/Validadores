@@ -1,0 +1,86 @@
+26/12/2017 3:57:45 p. m.	Este registro contiene información acerca de la operación de importación de esquema en el proyecto 'pruebitasionic' del equipo 'BOGRINARANJO' por el usuario 'ranaranjolo'.
+26/12/2017 3:57:46 p. m.	Se inició la importación del esquema de la base de datos.
+26/12/2017 3:58:28 p. m.	Recopilando credenciales de la base de datos
+26/12/2017 3:58:28 p. m.	Recopilando opciones de base de datos
+26/12/2017 3:58:28 p. m.	Recopilando la opción de configuración de ámbito de la base de datos genérica
+26/12/2017 3:58:28 p. m.	Recopilando usuarios
+26/12/2017 3:58:28 p. m.	Recopilando roles
+26/12/2017 3:58:28 p. m.	Recopilando roles de aplicación
+26/12/2017 3:58:28 p. m.	Recopilando pertenencias a roles
+26/12/2017 3:58:28 p. m.	Recopilando grupos de archivos
+26/12/2017 3:58:28 p. m.	Recopilando catálogos de texto completo
+26/12/2017 3:58:28 p. m.	Recopilando ensamblados
+26/12/2017 3:58:28 p. m.	Recopilando certificados
+26/12/2017 3:58:28 p. m.	Recopilando claves asimétricas
+26/12/2017 3:58:28 p. m.	Recopilando claves simétricas
+26/12/2017 3:58:28 p. m.	Recopilando claves simétricas cifradas
+26/12/2017 3:58:28 p. m.	Recopilando esquemas
+26/12/2017 3:58:29 p. m.	Recopilando colecciones de esquemas XML
+26/12/2017 3:58:29 p. m.	Recopilando tipos de datos definidos por el usuario
+26/12/2017 3:58:29 p. m.	Recopilando tipos definidos por el usuario
+26/12/2017 3:58:29 p. m.	Recopilando tipos de tabla
+26/12/2017 3:58:29 p. m.	Recopilando claves únicas para tipos de tabla
+26/12/2017 3:58:29 p. m.	Recopilando claves principales para tipos de tabla
+26/12/2017 3:58:29 p. m.	Recopilando índices para tipos de tablas
+26/12/2017 3:58:29 p. m.	Recopilando restricciones CHECK para tipos de tabla
+26/12/2017 3:58:29 p. m.	Recopilando restricciones DEFAULT para tipos de tabla
+26/12/2017 3:58:29 p. m.	Recopilando funciones de partición
+26/12/2017 3:58:29 p. m.	Recopilando esquemas de partición
+26/12/2017 3:58:39 p. m.	Recopilando funciones
+26/12/2017 3:58:39 p. m.	Recopilando funciones cifradas
+26/12/2017 3:58:39 p. m.	Recopilando agregados
+26/12/2017 3:58:39 p. m.	Recopilando procedimientos
+26/12/2017 3:58:39 p. m.	Recopilando procedimientos cifrados
+26/12/2017 3:58:39 p. m.	Recopilando tablas
+26/12/2017 3:58:40 p. m.	Recopilando claves principales
+26/12/2017 3:58:40 p. m.	Recopilando restricciones UNIQUE
+26/12/2017 3:58:40 p. m.	Recopilando claves externas
+26/12/2017 3:58:40 p. m.	Recopilando restricciones DEFAULT
+26/12/2017 3:58:40 p. m.	Recopilando restricciones CHECK
+26/12/2017 3:58:40 p. m.	Recopilando vistas
+26/12/2017 3:58:40 p. m.	Recopilando vistas cifradas
+26/12/2017 3:58:40 p. m.	Recopilando índices
+26/12/2017 3:58:40 p. m.	Recopilando estadísticas
+26/12/2017 3:58:40 p. m.	Recopilando listas de palabras irrelevantes de índices de texto completo
+26/12/2017 3:58:40 p. m.	Recopilando listas de propiedades de búsqueda
+26/12/2017 3:58:40 p. m.	Recopilando propiedades de búsqueda
+26/12/2017 3:58:40 p. m.	Recopilando índices de texto completo
+26/12/2017 3:58:40 p. m.	Recopilando índices de almacenamiento de columnas
+26/12/2017 3:58:40 p. m.	Recopilando índices espaciales
+26/12/2017 3:58:40 p. m.	Recopilando índices XML
+26/12/2017 3:58:40 p. m.	Recopilando índices XML selectivos
+26/12/2017 3:58:40 p. m.	Recopilando desencadenadores cifrados
+26/12/2017 3:58:40 p. m.	Recopilando desencadenadores
+26/12/2017 3:58:40 p. m.	Recopilando DDL triggers cifrados y de CLR
+26/12/2017 3:58:40 p. m.	Recopilando DDL triggers
+26/12/2017 3:58:40 p. m.	Recopilando sinónimos
+26/12/2017 3:58:40 p. m.	Recopilando valores predeterminados
+26/12/2017 3:58:40 p. m.	Recopilando enlaces UDDT de restricción de datos
+26/12/2017 3:58:40 p. m.	Recopilando reglas
+26/12/2017 3:58:40 p. m.	Recopilando enlaces UDDT de restricción de datos
+26/12/2017 3:58:40 p. m.	Recopilando tipos de mensaje
+26/12/2017 3:58:40 p. m.	Recopilando colas
+26/12/2017 3:58:40 p. m.	Recopilando contratos
+26/12/2017 3:58:40 p. m.	Recopilando servicios
+26/12/2017 3:58:40 p. m.	Recopilando notificaciones de eventos
+26/12/2017 3:58:40 p. m.	Recopilando enlaces de servicio remoto
+26/12/2017 3:58:40 p. m.	Recopilando prioridades de Broker
+26/12/2017 3:58:40 p. m.	Recopilando firmas
+26/12/2017 3:58:40 p. m.	Recopilando opciones de compresión de datos
+26/12/2017 3:58:40 p. m.	Recopilando tipos de secuencia
+26/12/2017 3:58:41 p. m.	Recopilando directivas de seguridad
+26/12/2017 3:58:41 p. m.	Recopilar claves de cifrado de columna
+26/12/2017 3:58:41 p. m.	Recopilando claves maestras de columna
+26/12/2017 3:58:41 p. m.	Recopilando orígenes de datos externos
+26/12/2017 3:58:41 p. m.	Recopilando formatos de archivo externos
+26/12/2017 3:58:41 p. m.	Recopilando tablas externas
+26/12/2017 3:58:41 p. m.	Recopilando permisos de base de datos
+26/12/2017 3:58:41 p. m.	Recopilando propiedades extendidas
+26/12/2017 3:58:42 p. m.	Recopilando credenciales
+26/12/2017 3:58:42 p. m.	Recopilando inicios de sesión
+26/12/2017 3:58:42 p. m.	Recopilando auditorías de servidor
+26/12/2017 3:58:53 p. m.	Buscando elementos duplicados en el proyecto
+26/12/2017 3:58:54 p. m.	Ha finalizado el procesamiento de los elementos duplicados
+26/12/2017 3:58:55 p. m.	Finalizó la importación de la base de datos.
+26/12/2017 3:58:55 p. m.	Se guardó un resumen de la importación en la siguiente ubicación: c:\users\ranaranjolo\source\repos\WebApplication1\pruebitasionic\Registros de importación de esquemas\pruebitasionic_20171226085745.log
+26/12/2017 3:58:55 p. m.	Haga clic en Finalizar para continuar...

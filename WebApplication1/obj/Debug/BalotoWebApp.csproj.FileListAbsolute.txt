@@ -1,0 +1,9 @@
+c:\users\ranaranjolo\source\repos\WebApplication1\WebApplication1\bin\WebApplication1.dll.config
+c:\users\ranaranjolo\source\repos\WebApplication1\WebApplication1\bin\WebApplication1.dll
+c:\users\ranaranjolo\source\repos\WebApplication1\WebApplication1\bin\WebApplication1.pdb
+c:\users\ranaranjolo\source\repos\WebApplication1\WebApplication1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+c:\users\ranaranjolo\source\repos\WebApplication1\WebApplication1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+c:\users\ranaranjolo\source\repos\WebApplication1\WebApplication1\obj\Debug\BalotoWebApp.csprojResolveAssemblyReference.cache
+c:\users\ranaranjolo\source\repos\WebApplication1\WebApplication1\obj\Debug\BalotoWebApp.csproj.CoreCompileInputs.cache
+c:\users\ranaranjolo\source\repos\WebApplication1\WebApplication1\obj\Debug\WebApplication1.dll
+c:\users\ranaranjolo\source\repos\WebApplication1\WebApplication1\obj\Debug\WebApplication1.pdb
