@@ -40,8 +40,9 @@ namespace WebApplication1
         {
             bool insercionOK = false;
             string fechaS = fecha.Date.ToString();
-            int sorteo = dbUtils.prInsertaSorteos(idSorteo, numsTr, numsRe, fechaS, winnerTr, winnerRe);
-            if (sorteo > 0)
+            int sorteo = 0;
+            //sorteo = dbUtils.prInsertaSorteos(idSorteo, numsTr, numsRe, fechaS, winnerTr, winnerRe);
+            if (sorteo >= 0)
             {
                 insercionOK = true;
                 sorteos draw = new sorteos();
