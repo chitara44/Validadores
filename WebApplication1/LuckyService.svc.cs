@@ -75,7 +75,6 @@ namespace WebApplication1
         public sorteos consultaSorteo(int idSorteo, string tipo)
         {
             sorteos sorteo = dbUtils.GetSorteoValues(idSorteo, tipo);
-
             return sorteo;
         }
 
