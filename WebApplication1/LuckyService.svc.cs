@@ -38,16 +38,30 @@ namespace WebApplication1
         )]
         public bool prInsertaSorteo(int idSorteo, string numsTr, string numsRe, DateTime fecha, bool winnerTr, bool winnerRe )
         {
+            List<sorteos> LisSor = new List<sorteos>();
+            utilidades.tipos Tr = utilidades.tipos.Tr;
             bool insercionOK = false;
             string fechaS = fecha.Date.ToString();
             int sorteo = 0;
-            //sorteo = dbUtils.prInsertaSorteos(idSorteo, numsTr, numsRe, fechaS, winnerTr, winnerRe);
+            sorteo = dbUtils.prInsertaSorteos(idSorteo, numsTr, numsRe, fechaS, winnerTr, winnerRe);
             if (sorteo >= 0)
             {
                 insercionOK = true;
                 sorteos draw = new sorteos();
-
-                draw = dbUtils.GetSorteoValues(idSorteo, "Tr");
+                for (int i = 0; i <= 1; i++)
+                {
+                    if (Tr == utilidades.tipos.Tr && i == Convert.ToInt32(Tr))
+                    {
+                        draw = dbUtils.GetSorteoValues(idSorteo, "Tr");
+                    }
+                    else
+                    {
+                        draw = dbUtils.GetSorteoValues(idSorteo, "Re");
+                    }
+                    draw.Listas();
+                    LisSor.Add(draw);
+                }
+                dbUtils.prInsertaCombos(LisSor);
             }
             return insercionOK;
         }

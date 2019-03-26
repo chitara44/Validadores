@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using WebApplication1.Utilities;
 
 namespace WebApplication1.entities
 {
@@ -269,96 +270,43 @@ namespace WebApplication1.entities
 
         }
 
-        public void Listas()
+        //public sorteos init()
+        public  sorteos init(string numeros, int id, string fechaSor, string tipo, string winner, sorteos s)
         {
-
-            List<string> i = new List<string>();
-            i.Add(Num1.ToString());
-            i.Add(Num2.ToString());
-            i.Add(Num3.ToString());
-            i.Add(Num4.ToString());
-            i.Add(Num5.ToString());
-            i.Add(Sb.ToString());
-            Indi = i;
-
-            List<string> d = new List<string>();
-            d.Add(Num1.ToString() + '|' + Num2.ToString());
-            d.Add(Num1.ToString() + '|' + Num3.ToString());
-            d.Add(Num1.ToString() + '|' + Num4.ToString());
-            d.Add(Num1.ToString() + '|' + Num5.ToString());
-            d.Add(Num1.ToString() + '|' + Sb.ToString());
-            d.Add(Num2.ToString() + '|' + Num3.ToString());
-            d.Add(Num2.ToString() + '|' + Num4.ToString());
-            d.Add(Num2.ToString() + '|' + Num5.ToString());
-            d.Add(Num2.ToString() + '|' + Sb.ToString());
-            d.Add(Num3.ToString() + '|' + Num4.ToString());
-            d.Add(Num3.ToString() + '|' + Num5.ToString());
-            d.Add(Num3.ToString() + '|' + Sb.ToString());
-            d.Add(Num4.ToString() + '|' + Num5.ToString());
-            d.Add(Num4.ToString() + '|' + Sb.ToString());
-            d.Add(Num5.ToString() + '|' + Sb.ToString());
-            Dupl = d;
-
-            List<string> t = new List<string>();
-            t.Add(Num1.ToString() + '|' + Num2.ToString() + '|' + Num3.ToString());
-            t.Add(Num1.ToString() + '|' + Num2.ToString() + '|' + Num4.ToString());
-            t.Add(Num1.ToString() + '|' + Num2.ToString() + '|' + Num5.ToString());
-            t.Add(Num1.ToString() + '|' + Num2.ToString() + '|' + Sb.ToString());
-            t.Add(Num1.ToString() + '|' + Num3.ToString() + '|' + Num4.ToString());
-            t.Add(Num1.ToString() + '|' + Num3.ToString() + '|' + Num5.ToString());
-            t.Add(Num1.ToString() + '|' + Num3.ToString() + '|' + Sb.ToString());
-            t.Add(Num1.ToString() + '|' + Num4.ToString() + '|' + Num5.ToString());
-            t.Add(Num1.ToString() + '|' + Num4.ToString() + '|' + Sb.ToString());
-            t.Add(Num2.ToString() + '|' + Num3.ToString() + '|' + Num4.ToString());
-            t.Add(Num2.ToString() + '|' + Num3.ToString() + '|' + Num5.ToString());
-            t.Add(Num2.ToString() + '|' + Num3.ToString() + '|' + Sb.ToString());
-            t.Add(Num2.ToString() + '|' + Num4.ToString() + '|' + Num5.ToString());
-            t.Add(Num2.ToString() + '|' + Num4.ToString() + '|' + Sb.ToString());
-            t.Add(Num2.ToString() + '|' + Num5.ToString() + '|' + Sb.ToString());
-            t.Add(Num3.ToString() + '|' + Num4.ToString() + '|' + Num5.ToString());
-            t.Add(Num3.ToString() + '|' + Num4.ToString() + '|' + Sb.ToString());
-            t.Add(Num3.ToString() + '|' + Num5.ToString() + '|' + Sb.ToString());
-            t.Add(Num4.ToString() + '|' + Num5.ToString() + '|' + Sb.ToString());
-            Terc = t;
-
-            List<string> c = new List<string>();
-            c.Add(Num1.ToString() + '|' + Num2.ToString() + '|' + Num3.ToString() + '|' + Num4.ToString());
-            c.Add(Num1.ToString() + '|' + Num2.ToString() + '|' + Num3.ToString() + '|' + Num5.ToString());
-            c.Add(Num1.ToString() + '|' + Num2.ToString() + '|' + Num3.ToString() + '|' + Sb.ToString());
-            c.Add(Num1.ToString() + '|' + Num2.ToString() + '|' + Num4.ToString() + '|' + Num5.ToString());
-            c.Add(Num1.ToString() + '|' + Num2.ToString() + '|' + Num4.ToString() + '|' + Sb.ToString());
-            c.Add(Num1.ToString() + '|' + Num2.ToString() + '|' + Num5.ToString() + '|' + Sb.ToString());
-            c.Add(Num1.ToString() + '|' + Num3.ToString() + '|' + Num4.ToString() + '|' + Num5.ToString());
-            c.Add(Num1.ToString() + '|' + Num3.ToString() + '|' + Num4.ToString() + '|' + Sb.ToString());
-            c.Add(Num1.ToString() + '|' + Num3.ToString() + '|' + Num5.ToString() + '|' + Sb.ToString());
-            c.Add(Num1.ToString() + '|' + Num4.ToString() + '|' + Num5.ToString() + '|' + Sb.ToString());
-            c.Add(Num2.ToString() + '|' + Num3.ToString() + '|' + Num4.ToString() + '|' + Num5.ToString());
-            c.Add(Num2.ToString() + '|' + Num3.ToString() + '|' + Num4.ToString() + '|' + Sb.ToString());
-            c.Add(Num2.ToString() + '|' + Num3.ToString() + '|' + Num5.ToString() + '|' + Sb.ToString());
-            c.Add(Num2.ToString() + '|' + Num4.ToString() + '|' + Num5.ToString() + '|' + Sb.ToString());
-            c.Add(Num3.ToString() + '|' + Num4.ToString() + '|' + Num5.ToString() + '|' + Sb.ToString());
-            Cuar = c;
-
-            List<string> q = new List<string>();
-            q.Add(Num1.ToString() + '|' + Num2.ToString() + '|' + Num3.ToString() + '|' + Num4.ToString() + '|' + Num5.ToString());
-            q.Add(Num1.ToString() + '|' + Num2.ToString() + '|' + Num3.ToString() + '|' + Num4.ToString() + '|' + Sb.ToString());
-            q.Add(Num1.ToString() + '|' + Num2.ToString() + '|' + Num3.ToString() + '|' + Num5.ToString() + '|' + Sb.ToString());
-            q.Add(Num1.ToString() + '|' + Num2.ToString() + '|' + Num4.ToString() + '|' + Num5.ToString() + '|' + Sb.ToString());
-            q.Add(Num1.ToString() + '|' + Num3.ToString() + '|' + Num4.ToString() + '|' + Num5.ToString() + '|' + Sb.ToString());
-            q.Add(Num2.ToString() + '|' + Num3.ToString() + '|' + Num4.ToString() + '|' + Num5.ToString() + '|' + Sb.ToString());
-            Quin = q;
-
-            List<string> s = new List<string>();
-            s.Add(Num1.ToString() + '|' + Num2.ToString() + '|' + Num3.ToString() + '|' + Num4.ToString() + '|' + Num5.ToString() + '|' + Sb.ToString());
-            Sext = s;
+            string[] nums = null;
+            if (numeros.Length > 0)
+            {
+                nums = numeros.Split('|');
+                s.IdSorteo = id;
+                s.fecha = Convert.ToDateTime(fechaSor);
+                s.Tipo = tipo;
+                s.winner = winner;
+                s.nuevo = utilidades.sorteoNuevo(id);
+                s.Num1 = Convert.ToInt16(nums[0].ToString());
+                s.Num2 = Convert.ToInt16(nums[1].ToString());
+                s.Num3 = Convert.ToInt16(nums[2].ToString());
+                s.Num4 = Convert.ToInt16(nums[3].ToString());
+                s.Num5 = Convert.ToInt16(nums[4].ToString());
+                s.Sb = Convert.ToInt16(nums[5].ToString());
 
                 
-          
+            }
+            return s;
         }
 
-        List<string> CreaListaIndis()
+        public void Listas()
         {
-            List<string> lI = null;
+            Indi = CreaListaIndis();
+            Dupl = CreaListaDuplas();
+            Terc = CreaListaTernas();
+            Cuar = CreaListaCuartetos();
+            Quin = CreaListaQuintetos();
+            Sext = CreaListaSextetos();
+        }
+
+        public List<string> CreaListaIndis()
+        {
+            List<string> lI = new List<string>();
             lI.Add(num1.ToString());
             lI.Add(num2.ToString());
             lI.Add(num3.ToString());
@@ -368,84 +316,84 @@ namespace WebApplication1.entities
             return lI;
         }
 
-        List<string> CreaListaDuplas()
+        public List<string> CreaListaDuplas()
         {
-            List<string> lD = null;
-            lD.Add(num1.ToString() + num2.ToString());
-            lD.Add(num1.ToString() + num3.ToString());
-            lD.Add(num1.ToString() + num4.ToString());
-            lD.Add(num1.ToString() + num5.ToString());
-            lD.Add(num1.ToString() + sb.ToString());
-            lD.Add(num2.ToString() + num3.ToString());
-            lD.Add(num2.ToString() + num4.ToString());
-            lD.Add(num2.ToString() + num5.ToString());
-            lD.Add(num2.ToString() + sb.ToString());
-            lD.Add(num3.ToString() + num4.ToString());
-            lD.Add(num3.ToString() + num5.ToString());
-            lD.Add(num3.ToString() + sb.ToString());
-            lD.Add(num4.ToString() + num5.ToString());
-            lD.Add(num4.ToString() + sb.ToString());
-            lD.Add(num5.ToString() + sb.ToString());
+            List<string> lD = new List<string>();
+            lD.Add(num1.ToString() + '|' + num2.ToString());
+            lD.Add(num1.ToString() + '|' + num3.ToString());
+            lD.Add(num1.ToString() + '|' + num4.ToString());
+            lD.Add(num1.ToString() + '|' + num5.ToString());
+            lD.Add(num1.ToString() + '|' + sb.ToString());
+            lD.Add(num2.ToString() + '|' + num3.ToString());
+            lD.Add(num2.ToString() + '|' + num4.ToString());
+            lD.Add(num2.ToString() + '|' + num5.ToString());
+            lD.Add(num2.ToString() + '|' + sb.ToString());
+            lD.Add(num3.ToString() + '|' + num4.ToString());
+            lD.Add(num3.ToString() + '|' + num5.ToString());
+            lD.Add(num3.ToString() + '|' + sb.ToString());
+            lD.Add(num4.ToString() + '|' + num5.ToString());
+            lD.Add(num4.ToString() + '|' + sb.ToString());
+            lD.Add(num5.ToString() + '|' + sb.ToString());
             return lD;
         }
 
-        List<string> CreaListaTernas()
+        public List<string> CreaListaTernas()
         {
-            List<string> lT = null;
-            lT.Add(num1.ToString() + num2.ToString() + num3.ToString());
-            lT.Add(num1.ToString() + num2.ToString() + num4.ToString());
-            lT.Add(num1.ToString() + num2.ToString() + num5.ToString());
-            lT.Add(num1.ToString() + num2.ToString() + sb.ToString());
-            lT.Add(num1.ToString() + num3.ToString() + num4.ToString());
-            lT.Add(num1.ToString() + num3.ToString() + num5.ToString());
-            lT.Add(num1.ToString() + num3.ToString() + sb.ToString());
-            lT.Add(num1.ToString() + num4.ToString() + num5.ToString());
-            lT.Add(num1.ToString() + num4.ToString() + sb.ToString());
-            lT.Add(num2.ToString() + num3.ToString() + num4.ToString());
-            lT.Add(num2.ToString() + num3.ToString() + num5.ToString());
-            lT.Add(num2.ToString() + num3.ToString() + sb.ToString());
-            lT.Add(num3.ToString() + num4.ToString() + num5.ToString());
-            lT.Add(num3.ToString() + num4.ToString() + sb.ToString());
-            lT.Add(num4.ToString() + num5.ToString() + sb.ToString());
+            List<string> lT = new List<string>();
+            lT.Add(num1.ToString() + '|' + num2.ToString() + '|' + num3.ToString());
+            lT.Add(num1.ToString() + '|' + num2.ToString() + '|' + num4.ToString());
+            lT.Add(num1.ToString() + '|' + num2.ToString() + '|' + num5.ToString());
+            lT.Add(num1.ToString() + '|' + num2.ToString() + '|' + sb.ToString());
+            lT.Add(num1.ToString() + '|' + num3.ToString() + '|' + num4.ToString());
+            lT.Add(num1.ToString() + '|' + num3.ToString() + '|' + num5.ToString());
+            lT.Add(num1.ToString() + '|' + num3.ToString() + '|' + sb.ToString());
+            lT.Add(num1.ToString() + '|' + num4.ToString() + '|' + num5.ToString());
+            lT.Add(num1.ToString() + '|' + num4.ToString() + '|' + sb.ToString());
+            lT.Add(num2.ToString() + '|' + num3.ToString() + '|' + num4.ToString());
+            lT.Add(num2.ToString() + '|' + num3.ToString() + '|' + num5.ToString());
+            lT.Add(num2.ToString() + '|' + num3.ToString() + '|' + sb.ToString());
+            lT.Add(num3.ToString() + '|' + num4.ToString() + '|' + num5.ToString());
+            lT.Add(num3.ToString() + '|' + num4.ToString() + '|' + sb.ToString());
+            lT.Add(num4.ToString() + '|' + num5.ToString() + '|' + sb.ToString());
             return lT;
         }
 
-        List<string> CreaListaCuartetos()
+        public List<string> CreaListaCuartetos()
         {
-            List<string> lC = null;
-            lC.Add(num1.ToString() + num2.ToString() + num3.ToString() + num4.ToString());
-            lC.Add(num1.ToString() + num2.ToString() + num3.ToString() + num5.ToString());
-            lC.Add(num1.ToString() + num2.ToString() + num3.ToString() + sb.ToString());
-            lC.Add(num1.ToString() + num2.ToString() + num4.ToString() + num5.ToString());
-            lC.Add(num1.ToString() + num2.ToString() + num4.ToString() + sb.ToString());
-            lC.Add(num1.ToString() + num2.ToString() + num5.ToString() + sb.ToString());
-            lC.Add(num1.ToString() + num3.ToString() + num4.ToString() + num5.ToString());
-            lC.Add(num1.ToString() + num3.ToString() + num4.ToString() + sb.ToString());
-            lC.Add(num1.ToString() + num3.ToString() + num5.ToString() + sb.ToString());
-            lC.Add(num1.ToString() + num4.ToString() + num5.ToString() + sb.ToString());
-            lC.Add(num2.ToString() + num3.ToString() + num4.ToString() + num5.ToString());
-            lC.Add(num2.ToString() + num3.ToString() + num4.ToString() + sb.ToString());
-            lC.Add(num2.ToString() + num4.ToString() + num5.ToString() + sb.ToString());
-            lC.Add(num3.ToString() + num4.ToString() + num5.ToString() + sb.ToString());
+            List<string> lC = new List<string>();
+            lC.Add(num1.ToString() + '|' + num2.ToString() + '|' + num3.ToString() + '|' + num4.ToString());
+            lC.Add(num1.ToString() + '|' + num2.ToString() + '|' + num3.ToString() + '|' + num5.ToString());
+            lC.Add(num1.ToString() + '|' + num2.ToString() + '|' + num3.ToString() + '|' + sb.ToString());
+            lC.Add(num1.ToString() + '|' + num2.ToString() + '|' + num4.ToString() + '|' + num5.ToString());
+            lC.Add(num1.ToString() + '|' + num2.ToString() + '|' + num4.ToString() + '|' + sb.ToString());
+            lC.Add(num1.ToString() + '|' + num2.ToString() + '|' + num5.ToString() + '|' + sb.ToString());
+            lC.Add(num1.ToString() + '|' + num3.ToString() + '|' + num4.ToString() + '|' + num5.ToString());
+            lC.Add(num1.ToString() + '|' + num3.ToString() + '|' + num4.ToString() + '|' + sb.ToString());
+            lC.Add(num1.ToString() + '|' + num3.ToString() + '|' + num5.ToString() + '|' + sb.ToString());
+            lC.Add(num1.ToString() + '|' + num4.ToString() + '|' + num5.ToString() + '|' + sb.ToString());
+            lC.Add(num2.ToString() + '|' + num3.ToString() + '|' + num4.ToString() + '|' + num5.ToString());
+            lC.Add(num2.ToString() + '|' + num3.ToString() + '|' + num4.ToString() + '|' + sb.ToString());
+            lC.Add(num2.ToString() + '|' + num4.ToString() + '|' + num5.ToString() + '|' + sb.ToString());
+            lC.Add(num3.ToString() + '|' + num4.ToString() + '|' + num5.ToString() + '|' + sb.ToString());
             return lC;
         }
 
-        List<string> CreaListaQuintetos()
+        public List<string> CreaListaQuintetos()
         {
-            List<string> lQ = null;
-            lQ.Add(num1.ToString() + num2.ToString() + num3.ToString() + num4.ToString() + num5.ToString());
-            lQ.Add(num1.ToString() + num2.ToString() + num3.ToString() + num4.ToString() + sb.ToString());
-            lQ.Add(num1.ToString() + num2.ToString() + num3.ToString() + num5.ToString() + sb.ToString());
-            lQ.Add(num1.ToString() + num2.ToString() + num4.ToString() + num5.ToString() + sb.ToString());
-            lQ.Add(num1.ToString() + num3.ToString() + num4.ToString() + num5.ToString() + sb.ToString());
-            lQ.Add(num2.ToString() + num3.ToString() + num4.ToString() + num5.ToString() + sb.ToString());
+            List<string> lQ = new List<string>();
+            lQ.Add(num1.ToString() + '|' + num2.ToString() + '|' + num3.ToString() + '|' + num4.ToString() + '|' + num5.ToString());
+            lQ.Add(num1.ToString() + '|' + num2.ToString() + '|' + num3.ToString() + '|' + num4.ToString() + '|' + sb.ToString());
+            lQ.Add(num1.ToString() + '|' + num2.ToString() + '|' + num3.ToString() + '|' + num5.ToString() + '|' + sb.ToString());
+            lQ.Add(num1.ToString() + '|' + num2.ToString() + '|' + num4.ToString() + '|' + num5.ToString() + '|' + sb.ToString());
+            lQ.Add(num1.ToString() + '|' + num3.ToString() + '|' + num4.ToString() + '|' + num5.ToString() + '|' + sb.ToString());
+            lQ.Add(num2.ToString() + '|' + num3.ToString() + '|' + num4.ToString() + '|' + num5.ToString() + '|' + sb.ToString());
             return lQ;
         }
 
-        List<string> CreaListaSextetos()
+        public List<string> CreaListaSextetos()
         {
-            List<string> lS = null;
-            lS.Add(num1.ToString() + num2.ToString() + num3.ToString() + num4.ToString() + num5.ToString() + sb.ToString());
+            List<string> lS = new List<string>();
+            lS.Add(num1.ToString() + '|' + num2.ToString() + '|' + num3.ToString() + '|' + num4.ToString() + '|' + num5.ToString() + '|' + sb.ToString());
             return lS;
         }
     }

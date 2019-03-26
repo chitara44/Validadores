@@ -129,39 +129,37 @@ namespace WebApplication1.Utilities
 
             try
             {
-                foreach (sorteos.Se sor in lSe)
+                foreach (sorteos raffle in lSe)
                 {
-                    var indi = new sorteos.Si();
-                    var dupl = new sorteos.Du();
-                    var terc = new sorteos.Te();
-                    var cuar = new sorteos.Cu();
-                    var quin = new sorteos.Qu();
-
-
-                    foreach (string cad in indi.Indi)
+                    foreach (string cad in raffle.Indi)
                     {
                         lNums = cad.Split(',');
-                        InsertarIndis(sor, lNums);
+                        InsertarIndis(raffle, lNums);
                     }
-                    foreach (string cad in dupl.Dupl)
+                    foreach (string cad in raffle.Dupl)
                     {
                         lNums = cad.Split(',');
-                        InsertarDuplas(sor, lNums);
+                        InsertarDuplas(raffle, lNums);
                     }
-                    foreach (string cad in terc.Terc)
+                    foreach (string cad in raffle.Terc)
                     {
                         lNums = cad.Split(',');
-                        InsertarTernas(sor, lNums);
+                        InsertarTernas(raffle, lNums);
                     }
-                    foreach (string cad in cuar.Cuar)
+                    foreach (string cad in raffle.Cuar)
                     {
                         lNums = cad.Split(',');
-                        InsertarCuartetos(sor, lNums);
+                        InsertarCuartetos(raffle, lNums);
                     }
-                    foreach (string cad in quin.Quin)
+                    foreach (string cad in raffle.Quin)
                     {
                         lNums = cad.Split(',');
-                        InsertarQuintetos(sor, lNums);
+                        InsertarQuintetos(raffle, lNums);
+                    }
+                    foreach (string cad in raffle.Sext)
+                    {
+                        lNums = cad.Split(',');
+                        InsertarSextetos(raffle, lNums);
                     }
                 }
                 exito = true;
@@ -177,26 +175,25 @@ namespace WebApplication1.Utilities
         {
             bool inserto = false;
             try {
-                var indi = new sorteos.Si();
                 using (SqlConnection cn = new SqlConnection(Properties.Settings.Default.con))
                 {
                     cn.Open();
                     SqlCommand tsql = cn.CreateCommand();
                     tsql.CommandText = "spInsertarIndi";
                     tsql.CommandType = System.Data.CommandType.StoredProcedure;
-                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("idSorteo", indi.IdLastSorteo));
+                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("idSorteo", se.IdSorteo));
                     tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("n1", lNums[0].ToString()));
-                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("fechaSor", Convert.ToDateTime(se.FechaSorteo)));
-                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("tipo", se.Tipo));
+                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("fechaSor", Convert.ToDateTime(se.Fecha)));
+                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("tipo", se.Tipo.ToString()));
                     tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("winner", se.Winner.ToString()));
-                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("nuevo", utilidades.sorteoNuevo(indi.IdLastSorteo)));
                     tsql.ExecuteNonQuery();
                     cn.Close();
                     inserto = true;
                 }
             }
-            catch
+            catch (Exception ex)
             {
+                Console.Write(ex);
                 inserto = false;
             }
             return inserto;
@@ -207,27 +204,27 @@ namespace WebApplication1.Utilities
             bool inserto = false;
             try
             {
-                var dupl = new sorteos.Du();
+                string[] nums = lNums[0].Split('|'); 
                 using (SqlConnection cn = new SqlConnection(Properties.Settings.Default.con))
                 {
                     cn.Open();
                     SqlCommand tsql = cn.CreateCommand();
                     tsql.CommandText = "spInsertarDupla";
                     tsql.CommandType = System.Data.CommandType.StoredProcedure;
-                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("idSorteo", dupl.IdLastSorteo));
-                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("n1", lNums[0].ToString()));
-                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("n2", lNums[1].ToString()));
-                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("fechaSor", Convert.ToDateTime(se.FechaSorteo)));
-                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("tipo", se.Tipo));
+                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("idSorteo", se.IdSorteo));
+                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("n1", nums[0].ToString()));
+                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("n2", nums[1].ToString()));
+                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("fechaSor", Convert.ToDateTime(se.Fecha)));
+                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("tipo", se.Tipo.ToString()));
                     tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("winner", se.Winner.ToString()));
-                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("nuevo", utilidades.sorteoNuevo(dupl.IdLastSorteo)));
                     tsql.ExecuteNonQuery();
                     cn.Close();
                     inserto = true;
                 }
             }
-            catch
+            catch (Exception ex)
             {
+                Console.Write(ex);
                 inserto = false;
             }
             return inserto;
@@ -238,28 +235,28 @@ namespace WebApplication1.Utilities
             bool inserto = false;
             try
             {
-                var terc = new sorteos.Te();
+                string[] nums = lNums[0].Split('|');
                 using (SqlConnection cn = new SqlConnection(Properties.Settings.Default.con))
                 {
                     cn.Open();
                     SqlCommand tsql = cn.CreateCommand();
                     tsql.CommandText = "spInsertarTerna";
                     tsql.CommandType = System.Data.CommandType.StoredProcedure;
-                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("idSorteo", terc.IdLastSorteo));
-                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("n1", lNums[0].ToString()));
-                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("n2", lNums[1].ToString()));
-                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("n3", lNums[2].ToString()));
-                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("fechaSor", Convert.ToDateTime(se.FechaSorteo)));
-                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("tipo", se.Tipo));
+                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("idSorteo", se.IdSorteo));
+                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("n1", nums[0].ToString()));
+                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("n2", nums[1].ToString()));
+                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("n3", nums[2].ToString()));
+                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("fechaSor", Convert.ToDateTime(se.Fecha)));
+                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("tipo", se.Tipo.ToString()));
                     tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("winner", se.Winner.ToString()));
-                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("nuevo", utilidades.sorteoNuevo(terc.IdLastSorteo)));
                     tsql.ExecuteNonQuery();
                     cn.Close();
                     inserto = true;
                 }
             }
-            catch
+            catch (Exception ex)
             {
+                Console.Write(ex);
                 inserto = false;
             }
             return inserto;
@@ -270,29 +267,29 @@ namespace WebApplication1.Utilities
             bool inserto = false;
             try
             {
-                var cuar = new sorteos.Cu();
+                string[] nums = lNums[0].Split('|');
                 using (SqlConnection cn = new SqlConnection(Properties.Settings.Default.con))
                 {
                     cn.Open();
                     SqlCommand tsql = cn.CreateCommand();
                     tsql.CommandText = "spInsertarCuarteto";
                     tsql.CommandType = System.Data.CommandType.StoredProcedure;
-                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("idSorteo", cuar.IdLastSorteo));
-                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("n1", lNums[0].ToString()));
-                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("n2", lNums[1].ToString()));
-                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("n3", lNums[2].ToString()));
-                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("n4", lNums[3].ToString()));
-                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("fechaSor", se.FechaSorteo));
-                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("tipo", se.Tipo));
-                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("winner", se.Winner));
-                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("nuevo", utilidades.sorteoNuevo(cuar.IdLastSorteo)));
+                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("idSorteo", se.IdSorteo));
+                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("n1", nums[0].ToString()));
+                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("n2", nums[1].ToString()));
+                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("n3", nums[2].ToString()));
+                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("n4", nums[3].ToString()));
+                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("fechaSor", Convert.ToDateTime(se.Fecha)));
+                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("tipo", se.Tipo.ToString()));
+                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("winner", se.Winner.ToString()));
                     tsql.ExecuteNonQuery();
                     cn.Close();
                     inserto = true;
                 }
             }
-            catch
+            catch (Exception ex)
             {
+                Console.Write(ex);
                 inserto = false;
             }
             return inserto;
@@ -303,30 +300,31 @@ namespace WebApplication1.Utilities
             bool inserto = false;
             try
             {
-                var quin = new sorteos.Qu();
+                string[] nums = lNums[0].Split('|');
                 using (SqlConnection cn = new SqlConnection(Properties.Settings.Default.con))
                 {
                     cn.Open();
                     SqlCommand tsql = cn.CreateCommand();
                     tsql.CommandText = "spInsertarQuinteto";
                     tsql.CommandType = System.Data.CommandType.StoredProcedure;
-                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("idSorteo", quin.IdLastSorteo));
-                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("n1", lNums[0].ToString()));
-                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("n2", lNums[1].ToString()));
-                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("n3", lNums[2].ToString()));
-                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("n4", lNums[3].ToString()));
-                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("n5", lNums[4].ToString()));
-                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("fechaSor", Convert.ToDateTime(se.FechaSorteo)));
-                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("tipo", se.Tipo));
+                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("idSorteo", se.IdSorteo));
+                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("n1", nums[0].ToString()));
+                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("n2", nums[1].ToString()));
+                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("n3", nums[2].ToString()));
+                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("n4", nums[3].ToString()));
+                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("n5", nums[4].ToString()));
+                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("fechaSor", Convert.ToDateTime(se.Fecha)));
+                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("tipo", se.Tipo.ToString()));
                     tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("winner", se.Winner.ToString()));
-                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("nuevo", utilidades.sorteoNuevo(quin.IdLastSorteo)));
+                    //tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("nuevo", utilidades.sorteoNuevo(se.IdSorteo)));
                     tsql.ExecuteNonQuery();
                     cn.Close();
                     inserto = true;
                 }
             }
-            catch
+            catch (Exception ex)
             {
+                Console.Write(ex);
                 inserto = false;
             }
             return inserto;
@@ -337,31 +335,32 @@ namespace WebApplication1.Utilities
             bool inserto = false;
             try
             {
-                var sext = new sorteos.Se();
+                string[] nums = lNums[0].Split('|');
                 using (SqlConnection cn = new SqlConnection(Properties.Settings.Default.con))
                 {
                     cn.Open();
                     SqlCommand tsql = cn.CreateCommand();
                     tsql.CommandText = "spInsertarSexteto";
                     tsql.CommandType = System.Data.CommandType.StoredProcedure;
-                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("idSorteo", sext.IdLastSorteo));
-                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("n1", lNums[0].ToString()));
-                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("n2", lNums[1].ToString()));
-                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("n3", lNums[2].ToString()));
-                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("n4", lNums[3].ToString()));
-                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("n5", lNums[4].ToString()));
-                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("n6", lNums[5].ToString()));
-                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("fechaSor", Convert.ToDateTime(se.FechaSorteo)));
-                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("tipo", se.Tipo));
+                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("idSorteo", se.IdSorteo));
+                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("n1", nums[0].ToString()));
+                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("n2", nums[1].ToString()));
+                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("n3", nums[2].ToString()));
+                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("n4", nums[3].ToString()));
+                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("n5", nums[4].ToString()));
+                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("n6", nums[5].ToString()));
+                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("fechaSor", Convert.ToDateTime(se.Fecha)));
+                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("tipo", se.Tipo.ToString()));
                     tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("winner", se.Winner.ToString()));
-                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("nuevo", utilidades.sorteoNuevo(sext.IdLastSorteo)));
+                    //tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("nuevo", utilidades.sorteoNuevo(se.IdSorteo)));
                     tsql.ExecuteNonQuery();
                     cn.Close();
                     inserto = true;
                 }
             }
-            catch
+            catch (Exception ex)
             {
+                Console.Write(ex);
                 inserto = false;
             }
             return inserto;

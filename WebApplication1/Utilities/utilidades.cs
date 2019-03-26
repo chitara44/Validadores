@@ -9,6 +9,12 @@ namespace WebApplication1.Utilities
 {
     public class utilidades
     {
+        public enum tipos
+        {
+            Tr,
+            Re
+        }
+
         /// <summary>
         /// consulta si el sorteo es de la nueva modalidad
         /// </summary>
@@ -26,14 +32,13 @@ namespace WebApplication1.Utilities
         /// <param name="numeros">cadena que contiene los numeros del sorteo</param>
         /// <param name="s">objeto sexteto sobre el cual se devolvera la informacion separada</param>
         /// <returns>el objeto sexteto con los numeros separados y con la cantidad de numeros usados</returns>
-        public static sorteos separaNumeros(string numeros, sorteos s)
+        public static sorteos separaNumeros( string numeros, int id, string fechaSor, string tipo, Boolean winner, sorteos s)
         {
             string[] nums = null;
             if (numeros.Length > 0)
             {
                 nums = numeros.Split('|');
                 s.EnUso = nums.Length;
-
                 switch (nums.Length)
                 {
                     case 1:
