@@ -32,5 +32,7 @@ namespace WebApplication1
         List<sorteos.Se> contadorSextetos(string tipo, string nuevo, int n1, int n2, int n3, int n4, int n5, int n6);
         [OperationContract]
         bool llenarCombos(int sorteoIni, int sorteoFin);
+        [OperationContract]
+        bool poblarTablas(int sorteoIni, int sorteoFin);
     }
 }

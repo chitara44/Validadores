@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DLL.DBAdapters.Properties.Settings.PrepagosConnectionString1-Web.config Connection String" description="DLL.DBAdapters.Properties.Settings.PrepagosConnectionString1 Cadena de conexión que usa la aplicación en web.config para obtener acceso a la base de datos." defaultValue="Data Source=LAPTOP-OMSFNMAI\SQLEXPRESS;Initial Catalog=pruebitasionic;User ID=sa;Password=CpmRan44&amp;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\desarrollo\\WebApplication1\\WebApplication1\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DLL.DBAdapters.Properties.Settings.PrepagosConnectionString1']/@connectionString" />
+  </parameter>
+  <parameter name="WebApplication1.Properties.Settings.con-Web.config Connection String" description="WebApplication1.Properties.Settings.con Cadena de conexión que usa la aplicación en web.config para obtener acceso a la base de datos." defaultValue="Data Source=LAPTOP-OMSFNMAI\SQLEXPRESS;Initial Catalog=pruebitasionic;Persist Security Info=True;User ID=sa;Password=CpmRan44&amp;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\desarrollo\\WebApplication1\\WebApplication1\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='WebApplication1.Properties.Settings.con']/@connectionString" />
+  </parameter>
+</parameters>

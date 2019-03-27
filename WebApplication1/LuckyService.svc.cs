@@ -219,5 +219,52 @@ namespace WebApplication1
             dbUtils.prInsertaCombos(lSorteos);
             return llenos;
         }
+
+        [WebInvoke(
+        Method = "POST",
+        RequestFormat = WebMessageFormat.Json,
+        ResponseFormat = WebMessageFormat.Json
+        )]
+        public bool poblarTablas(int sorteoIni, int sorteoFin)
+        {
+            List<sorteos> LisSor = new List<sorteos>();
+            utilidades.tipos Tr = utilidades.tipos.Tr;
+            bool insercionOK = false;
+            try
+            {
+                for (int ii = sorteoIni; ii <= sorteoFin; ii++)
+                {
+                    insercionOK = false;
+                    sorteos draw = new sorteos();
+                    for (int i = 0; i <= 1; i++)
+                    {
+                        if (Tr == utilidades.tipos.Tr && i == Convert.ToInt32(Tr))
+                        {
+                            draw = dbUtils.GetSorteoValues(ii, "Tr");
+                        }
+                        else
+                        {
+                            draw = dbUtils.GetSorteoValues(ii, "Re");
+                        }
+                        draw.Listas();
+                        LisSor.Add(draw);
+                    }
+
+                }
+                dbUtils.prInsertaCombos(LisSor);
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex);
+                insercionOK = false;
+            }
+            int cant = (sorteoFin - sorteoIni) * 2;
+            if (LisSor.Count.Equals(cant))
+            {
+                insercionOK = true;
+            }
+
+            return insercionOK;
+        }
     }
 }

@@ -1,0 +1,10 @@
+C:\desarrollo\WebApplication1\WebApplication1\bin\WebApplication1.dll.config
+C:\desarrollo\WebApplication1\WebApplication1\bin\WebApplication1.dll
+C:\desarrollo\WebApplication1\WebApplication1\bin\WebApplication1.pdb
+C:\desarrollo\WebApplication1\WebApplication1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\desarrollo\WebApplication1\WebApplication1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\desarrollo\WebApplication1\WebApplication1\obj\Release\WebApplication1.csprojAssemblyReference.cache
+C:\desarrollo\WebApplication1\WebApplication1\obj\Release\WebApplication1.csproj.CoreCompileInputs.cache
+C:\desarrollo\WebApplication1\WebApplication1\obj\Release\WebApplication1.csproj.CopyComplete
+C:\desarrollo\WebApplication1\WebApplication1\obj\Release\WebApplication1.dll
+C:\desarrollo\WebApplication1\WebApplication1\obj\Release\WebApplication1.pdb
