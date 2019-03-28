@@ -258,12 +258,11 @@ namespace WebApplication1
                 Console.Write(ex);
                 insercionOK = false;
             }
-            int cant = (sorteoFin - sorteoIni) * 2;
+            int cant = ((sorteoFin - sorteoIni) + 1) * 2;
             if (LisSor.Count.Equals(cant))
             {
                 insercionOK = true;
             }
-
             return insercionOK;
         }
     }
