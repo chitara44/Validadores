@@ -70,6 +70,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\evidente\ServicioIdentificacion.wsdl" />
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\numbersfinder - Web Deploy.pubxml" />
     <None Include="Properties\Settings.settings">
@@ -84,13 +85,26 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\evidente\configuration91.svcinfo" />
+    <None Include="Connected Services\evidente\configuration.svcinfo" />
+    <None Include="Connected Services\evidente\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="LuckyService.svc" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="entities\sorteos.cs" />
+    <Compile Include="Connected Services\evidente\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="entities\resValidaciones.cs" />
+    <Compile Include="entities\parametros.cs" />
+    <Compile Include="entities\persona.cs" />
     <Compile Include="ILuckyService.cs" />
     <Compile Include="LuckyService.svc.cs">
       <DependentUpon>LuckyService.svc</DependentUpon>
@@ -103,6 +117,12 @@
     </Compile>
     <Compile Include="Utilities\utilidades.cs" />
     <Compile Include="Utilities\dbUtils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\evidente\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

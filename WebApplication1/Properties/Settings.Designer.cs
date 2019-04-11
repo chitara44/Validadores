@@ -26,8 +26,8 @@ namespace WebApplication1.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LOCAL)\\SQLEXPRESSLOCAL;Initial Catalog=pruebitasionic;Persist Securi" +
-            "ty Info=True;User ID=sa;Password=R1c4rd1t0&")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=10.80.3.147,52100;Initial Catalog=AppVentasMovistar;Persist Securi" +
+            "ty Info=True;User ID=AppVentasMovistarPruebas;Password=Pruebas")]
         public string con {
             get {
                 return ((string)(this["con"]));

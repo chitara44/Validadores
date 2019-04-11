@@ -1,0 +1,668 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:tns3="http://exceptions.util.dc.com" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:intf="http://www.datacredito.com.co/services/ServicioIdentificacion" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns4="http://exception.id.dc.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns1="http://modificacion.util.dc.com" xmlns:tns2="http://idws.util.dc.com" xmlns:impl="http://www.datacredito.com.co/services/ServicioIdentificacion" targetNamespace="http://www.datacredito.com.co/services/ServicioIdentificacion" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://modificacion.util.dc.com">
+      <xsd:import namespace="http://exception.id.dc.com" />
+      <xsd:import namespace="http://idws.util.dc.com" />
+      <xsd:import namespace="http://exceptions.util.dc.com" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:complexType name="ModificacionException">
+        <xsd:sequence />
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://idws.util.dc.com">
+      <xsd:import namespace="http://exception.id.dc.com" />
+      <xsd:import namespace="http://modificacion.util.dc.com" />
+      <xsd:import namespace="http://exceptions.util.dc.com" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:complexType name="IdwsException">
+        <xsd:sequence />
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://exceptions.util.dc.com">
+      <xsd:import namespace="http://exception.id.dc.com" />
+      <xsd:import namespace="http://idws.util.dc.com" />
+      <xsd:import namespace="http://modificacion.util.dc.com" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:complexType name="ParserXMLException">
+        <xsd:sequence />
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://exception.id.dc.com">
+      <xsd:import namespace="http://idws.util.dc.com" />
+      <xsd:import namespace="http://modificacion.util.dc.com" />
+      <xsd:import namespace="http://exceptions.util.dc.com" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:complexType name="DAOException">
+        <xsd:sequence />
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ModificacionException">
+    <wsdl:part name="fault" type="tns1:ModificacionException" />
+  </wsdl:message>
+  <wsdl:message name="consultarListaEstadisticasEncuestasGeneradasResponse">
+    <wsdl:part name="consultarListaEstadisticasEncuestasGeneradasReturn" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="iniciarTransaccionOTPRequest">
+    <wsdl:part name="xmlIniciarTransaccionOTP" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="consultarParametrizacionesCompletasRequest">
+    <wsdl:part name="producto" type="soapenc:string" />
+    <wsdl:part name="tipoIdentificacion" type="soapenc:string" />
+    <wsdl:part name="entidad" type="soapenc:string" />
+    <wsdl:part name="indParametros" type="soapenc:boolean" />
+  </wsdl:message>
+  <wsdl:message name="consultarListaEstadisticasEncuestasGeneradasRequest">
+    <wsdl:part name="entidad" type="soapenc:string" />
+    <wsdl:part name="identificacion" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="preguntasResponse">
+    <wsdl:part name="preguntasReturn" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="consultarCodigosValidacionResponse">
+    <wsdl:part name="consultarCodigosValidacionReturn" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="adicionarRespuestaCuestionarioResponse">
+    <wsdl:part name="adicionarRespuestaCuestionarioReturn" type="xsd:boolean" />
+  </wsdl:message>
+  <wsdl:message name="adicionarRespuestaCuestionarioRequest">
+    <wsdl:part name="idRegCuestionario" type="soapenc:string" />
+    <wsdl:part name="nroCuestionario" type="soapenc:string" />
+    <wsdl:part name="nroConValidacion" type="soapenc:string" />
+    <wsdl:part name="cod_pregunta" type="soapenc:string" />
+    <wsdl:part name="cod_respuesta" type="soapenc:string" />
+    <wsdl:part name="orden" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="consultarTiposAlertaResponse">
+    <wsdl:part name="consultarTiposAlertaReturn" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="consultarParametroResponse">
+    <wsdl:part name="consultarParametroReturn" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="consultarParametrizacionRequest">
+    <wsdl:part name="producto" type="soapenc:string" />
+    <wsdl:part name="consecutivo" type="soapenc:string" />
+    <wsdl:part name="nit" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="preguntasRequest">
+    <wsdl:part name="paramProducto" type="soapenc:string" />
+    <wsdl:part name="producto" type="soapenc:string" />
+    <wsdl:part name="canal" type="soapenc:string" />
+    <wsdl:part name="solicitudCuestionario" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="validarResponse">
+    <wsdl:part name="validarReturn" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="DAOException">
+    <wsdl:part name="fault" type="tns4:DAOException" />
+  </wsdl:message>
+  <wsdl:message name="iniciarTransaccionOTPResponse">
+    <wsdl:part name="iniciarTransaccionOTPReturn" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="consultarParametrizacionResponse">
+    <wsdl:part name="consultarParametrizacionReturn" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="verificarCodigoOTPResponse">
+    <wsdl:part name="verificarCodigoOTPReturn" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="consultarAlertasRequest">
+    <wsdl:part name="tipoDoc" type="soapenc:string" />
+    <wsdl:part name="numDoc" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="consultarEstadisticasEncuestasDetalladasResponse">
+    <wsdl:part name="consultarEstadisticasEncuestasDetalladasReturn" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="IdwsException">
+    <wsdl:part name="fault" type="tns2:IdwsException" />
+  </wsdl:message>
+  <wsdl:message name="consultarCodigosPreguntasRequest" />
+  <wsdl:message name="consultarEstadisticasDetalladasResponse">
+    <wsdl:part name="consultarEstadisticasDetalladasReturn" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="consultarEstadisticasDetalladasRequest">
+    <wsdl:part name="xmlEstadisticasDetalldas" type="soapenc:string" />
+    <wsdl:part name="email" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="consultarParametrizacionesRequest">
+    <wsdl:part name="producto" type="soapenc:string" />
+    <wsdl:part name="tipoIdentificacion" type="soapenc:string" />
+    <wsdl:part name="entidad" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="consultarSistemaAlertasRequest">
+    <wsdl:part name="producto" type="soapenc:string" />
+    <wsdl:part name="nit" type="soapenc:string" />
+    <wsdl:part name="paramProducto" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="consultarEstadisticasEncuestasDetalladasRequest">
+    <wsdl:part name="xmlEstadisticasDetalladas" type="soapenc:string" />
+    <wsdl:part name="email" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="ParserXMLException">
+    <wsdl:part name="fault" type="tns3:ParserXMLException" />
+  </wsdl:message>
+  <wsdl:message name="consultarCodigosValidacionRequest" />
+  <wsdl:message name="consultarParametroParametrizacionesRequest1">
+    <wsdl:part name="parametrizacionesXML" type="soapenc:string" />
+    <wsdl:part name="codParametro" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="verificarResponse">
+    <wsdl:part name="verificarReturn" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="validarRequest">
+    <wsdl:part name="paramProducto" type="soapenc:string" />
+    <wsdl:part name="producto" type="soapenc:string" />
+    <wsdl:part name="canal" type="soapenc:string" />
+    <wsdl:part name="datosValidacion" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="generarCodigoOTPResponse">
+    <wsdl:part name="generarCodigoOTPReturn" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="verificarRequest">
+    <wsdl:part name="producto" type="soapenc:string" />
+    <wsdl:part name="paramProducto" type="soapenc:string" />
+    <wsdl:part name="respuestas" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="consultarParametroParametrizacionesResponse">
+    <wsdl:part name="consultarParametroParametrizacionesReturn" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="consultarCodigosPreguntasResponse">
+    <wsdl:part name="consultarCodigosPreguntasReturn" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="consultarParametrizacionesResponse">
+    <wsdl:part name="consultarParametrizacionesReturn" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="consultarUltimoResultadoResponse">
+    <wsdl:part name="consultarUltimoResultadoReturn" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="generarCodigoOTPRequest">
+    <wsdl:part name="xmlGenerarCodigoOTP" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="consultarUltimoResultadoRequest">
+    <wsdl:part name="producto" type="soapenc:string" />
+    <wsdl:part name="nit" type="soapenc:string" />
+    <wsdl:part name="tipo_identificacion" type="soapenc:string" />
+    <wsdl:part name="identificacion" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="verificarCodigoOTPRequest">
+    <wsdl:part name="xmlVerificarCodigoOTP" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="consultarParametroRequest">
+    <wsdl:part name="parametrizacion" type="soapenc:string" />
+    <wsdl:part name="transaccion" type="soapenc:string" />
+    <wsdl:part name="producto" type="soapenc:string" />
+    <wsdl:part name="parametro" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="consultarParametroParametrizacionesResponse1">
+    <wsdl:part name="consultarParametroParametrizacionesReturn" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="consultarListaEstadisticasGeneradasRequest">
+    <wsdl:part name="entidad" type="soapenc:string" />
+    <wsdl:part name="identificacion" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="consultarListaEstadisticasGeneradasResponse">
+    <wsdl:part name="consultarListaEstadisticasGeneradasReturn" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="consultarParametrizacionesCompletasResponse">
+    <wsdl:part name="consultarParametrizacionesCompletasReturn" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="consultarAlertasResponse">
+    <wsdl:part name="consultarAlertasReturn" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="consultarParametroParametrizacionesRequest">
+    <wsdl:part name="parametrizacionesXML" type="soapenc:string" />
+    <wsdl:part name="transaccion" type="soapenc:string" />
+    <wsdl:part name="codParametro" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="consultarSistemaAlertasResponse">
+    <wsdl:part name="consultarSistemaAlertasReturn" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="consultarTiposAlertaRequest">
+    <wsdl:part name="criteriosXML" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:portType name="ServicioIdentificacionImpl">
+    <wsdl:operation name="consultarTiposAlerta" parameterOrder="criteriosXML">
+      <wsdl:input name="consultarTiposAlertaRequest" message="impl:consultarTiposAlertaRequest" />
+      <wsdl:output name="consultarTiposAlertaResponse" message="impl:consultarTiposAlertaResponse" />
+      <wsdl:fault name="ModificacionException" message="impl:ModificacionException" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarAlertas" parameterOrder="tipoDoc numDoc">
+      <wsdl:input name="consultarAlertasRequest" message="impl:consultarAlertasRequest" />
+      <wsdl:output name="consultarAlertasResponse" message="impl:consultarAlertasResponse" />
+      <wsdl:fault name="ModificacionException" message="impl:ModificacionException" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarEstadisticasDetalladas" parameterOrder="xmlEstadisticasDetalldas email">
+      <wsdl:input name="consultarEstadisticasDetalladasRequest" message="impl:consultarEstadisticasDetalladasRequest" />
+      <wsdl:output name="consultarEstadisticasDetalladasResponse" message="impl:consultarEstadisticasDetalladasResponse" />
+      <wsdl:fault name="IdwsException" message="impl:IdwsException" />
+      <wsdl:fault name="ParserXMLException" message="impl:ParserXMLException" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarParametrizacionesCompletas" parameterOrder="producto tipoIdentificacion entidad indParametros">
+      <wsdl:input name="consultarParametrizacionesCompletasRequest" message="impl:consultarParametrizacionesCompletasRequest" />
+      <wsdl:output name="consultarParametrizacionesCompletasResponse" message="impl:consultarParametrizacionesCompletasResponse" />
+      <wsdl:fault name="IdwsException" message="impl:IdwsException" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarParametrizaciones" parameterOrder="producto tipoIdentificacion entidad">
+      <wsdl:input name="consultarParametrizacionesRequest" message="impl:consultarParametrizacionesRequest" />
+      <wsdl:output name="consultarParametrizacionesResponse" message="impl:consultarParametrizacionesResponse" />
+      <wsdl:fault name="IdwsException" message="impl:IdwsException" />
+    </wsdl:operation>
+    <wsdl:operation name="validar" parameterOrder="paramProducto producto canal datosValidacion">
+      <wsdl:input name="validarRequest" message="impl:validarRequest" />
+      <wsdl:output name="validarResponse" message="impl:validarResponse" />
+      <wsdl:fault name="IdwsException" message="impl:IdwsException" />
+    </wsdl:operation>
+    <wsdl:operation name="preguntas" parameterOrder="paramProducto producto canal solicitudCuestionario">
+      <wsdl:input name="preguntasRequest" message="impl:preguntasRequest" />
+      <wsdl:output name="preguntasResponse" message="impl:preguntasResponse" />
+      <wsdl:fault name="IdwsException" message="impl:IdwsException" />
+      <wsdl:fault name="DAOException" message="impl:DAOException" />
+    </wsdl:operation>
+    <wsdl:operation name="verificar" parameterOrder="producto paramProducto respuestas">
+      <wsdl:input name="verificarRequest" message="impl:verificarRequest" />
+      <wsdl:output name="verificarResponse" message="impl:verificarResponse" />
+      <wsdl:fault name="IdwsException" message="impl:IdwsException" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarCodigosValidacion">
+      <wsdl:input name="consultarCodigosValidacionRequest" message="impl:consultarCodigosValidacionRequest" />
+      <wsdl:output name="consultarCodigosValidacionResponse" message="impl:consultarCodigosValidacionResponse" />
+      <wsdl:fault name="IdwsException" message="impl:IdwsException" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarCodigosPreguntas">
+      <wsdl:input name="consultarCodigosPreguntasRequest" message="impl:consultarCodigosPreguntasRequest" />
+      <wsdl:output name="consultarCodigosPreguntasResponse" message="impl:consultarCodigosPreguntasResponse" />
+      <wsdl:fault name="IdwsException" message="impl:IdwsException" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarParametro" parameterOrder="parametrizacion transaccion producto parametro">
+      <wsdl:input name="consultarParametroRequest" message="impl:consultarParametroRequest" />
+      <wsdl:output name="consultarParametroResponse" message="impl:consultarParametroResponse" />
+      <wsdl:fault name="IdwsException" message="impl:IdwsException" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarParametroParametrizaciones" parameterOrder="parametrizacionesXML transaccion codParametro">
+      <wsdl:input name="consultarParametroParametrizacionesRequest" message="impl:consultarParametroParametrizacionesRequest" />
+      <wsdl:output name="consultarParametroParametrizacionesResponse" message="impl:consultarParametroParametrizacionesResponse" />
+      <wsdl:fault name="IdwsException" message="impl:IdwsException" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarParametroParametrizaciones" parameterOrder="parametrizacionesXML codParametro">
+      <wsdl:input name="consultarParametroParametrizacionesRequest1" message="impl:consultarParametroParametrizacionesRequest1" />
+      <wsdl:output name="consultarParametroParametrizacionesResponse1" message="impl:consultarParametroParametrizacionesResponse1" />
+      <wsdl:fault name="IdwsException" message="impl:IdwsException" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarParametrizacion" parameterOrder="producto consecutivo nit">
+      <wsdl:input name="consultarParametrizacionRequest" message="impl:consultarParametrizacionRequest" />
+      <wsdl:output name="consultarParametrizacionResponse" message="impl:consultarParametrizacionResponse" />
+      <wsdl:fault name="IdwsException" message="impl:IdwsException" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarUltimoResultado" parameterOrder="producto nit tipo_identificacion identificacion">
+      <wsdl:input name="consultarUltimoResultadoRequest" message="impl:consultarUltimoResultadoRequest" />
+      <wsdl:output name="consultarUltimoResultadoResponse" message="impl:consultarUltimoResultadoResponse" />
+      <wsdl:fault name="IdwsException" message="impl:IdwsException" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarSistemaAlertas" parameterOrder="producto nit paramProducto">
+      <wsdl:input name="consultarSistemaAlertasRequest" message="impl:consultarSistemaAlertasRequest" />
+      <wsdl:output name="consultarSistemaAlertasResponse" message="impl:consultarSistemaAlertasResponse" />
+      <wsdl:fault name="IdwsException" message="impl:IdwsException" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarListaEstadisticasGeneradas" parameterOrder="entidad identificacion">
+      <wsdl:input name="consultarListaEstadisticasGeneradasRequest" message="impl:consultarListaEstadisticasGeneradasRequest" />
+      <wsdl:output name="consultarListaEstadisticasGeneradasResponse" message="impl:consultarListaEstadisticasGeneradasResponse" />
+      <wsdl:fault name="IdwsException" message="impl:IdwsException" />
+      <wsdl:fault name="DAOException" message="impl:DAOException" />
+      <wsdl:fault name="ParserXMLException" message="impl:ParserXMLException" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarListaEstadisticasEncuestasGeneradas" parameterOrder="entidad identificacion">
+      <wsdl:input name="consultarListaEstadisticasEncuestasGeneradasRequest" message="impl:consultarListaEstadisticasEncuestasGeneradasRequest" />
+      <wsdl:output name="consultarListaEstadisticasEncuestasGeneradasResponse" message="impl:consultarListaEstadisticasEncuestasGeneradasResponse" />
+      <wsdl:fault name="IdwsException" message="impl:IdwsException" />
+      <wsdl:fault name="DAOException" message="impl:DAOException" />
+      <wsdl:fault name="ParserXMLException" message="impl:ParserXMLException" />
+    </wsdl:operation>
+    <wsdl:operation name="adicionarRespuestaCuestionario" parameterOrder="idRegCuestionario nroCuestionario nroConValidacion cod_pregunta cod_respuesta orden">
+      <wsdl:input name="adicionarRespuestaCuestionarioRequest" message="impl:adicionarRespuestaCuestionarioRequest" />
+      <wsdl:output name="adicionarRespuestaCuestionarioResponse" message="impl:adicionarRespuestaCuestionarioResponse" />
+      <wsdl:fault name="IdwsException" message="impl:IdwsException" />
+      <wsdl:fault name="DAOException" message="impl:DAOException" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarEstadisticasEncuestasDetalladas" parameterOrder="xmlEstadisticasDetalladas email">
+      <wsdl:input name="consultarEstadisticasEncuestasDetalladasRequest" message="impl:consultarEstadisticasEncuestasDetalladasRequest" />
+      <wsdl:output name="consultarEstadisticasEncuestasDetalladasResponse" message="impl:consultarEstadisticasEncuestasDetalladasResponse" />
+      <wsdl:fault name="IdwsException" message="impl:IdwsException" />
+      <wsdl:fault name="ParserXMLException" message="impl:ParserXMLException" />
+    </wsdl:operation>
+    <wsdl:operation name="generarCodigoOTP" parameterOrder="xmlGenerarCodigoOTP">
+      <wsdl:input name="generarCodigoOTPRequest" message="impl:generarCodigoOTPRequest" />
+      <wsdl:output name="generarCodigoOTPResponse" message="impl:generarCodigoOTPResponse" />
+      <wsdl:fault name="IdwsException" message="impl:IdwsException" />
+      <wsdl:fault name="DAOException" message="impl:DAOException" />
+    </wsdl:operation>
+    <wsdl:operation name="verificarCodigoOTP" parameterOrder="xmlVerificarCodigoOTP">
+      <wsdl:input name="verificarCodigoOTPRequest" message="impl:verificarCodigoOTPRequest" />
+      <wsdl:output name="verificarCodigoOTPResponse" message="impl:verificarCodigoOTPResponse" />
+      <wsdl:fault name="IdwsException" message="impl:IdwsException" />
+      <wsdl:fault name="DAOException" message="impl:DAOException" />
+    </wsdl:operation>
+    <wsdl:operation name="iniciarTransaccionOTP" parameterOrder="xmlIniciarTransaccionOTP">
+      <wsdl:input name="iniciarTransaccionOTPRequest" message="impl:iniciarTransaccionOTPRequest" />
+      <wsdl:output name="iniciarTransaccionOTPResponse" message="impl:iniciarTransaccionOTPResponse" />
+      <wsdl:fault name="IdwsException" message="impl:IdwsException" />
+      <wsdl:fault name="DAOException" message="impl:DAOException" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServicioIdentificacionSoapBinding" type="impl:ServicioIdentificacionImpl">
+    <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="consultarTiposAlerta">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="consultarTiposAlertaRequest">
+        <wsdlsoap:body use="encoded" namespace="http://ws.id.dc.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="consultarTiposAlertaResponse">
+        <wsdlsoap:body use="encoded" namespace="http://www.datacredito.com.co/services/ServicioIdentificacion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="ModificacionException">
+        <wsdlsoap:fault use="encoded" name="ModificacionException" namespace="http://www.datacredito.com.co/services/ServicioIdentificacion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="consultarAlertas">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="consultarAlertasRequest">
+        <wsdlsoap:body use="encoded" namespace="http://ws.id.dc.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="consultarAlertasResponse">
+        <wsdlsoap:body use="encoded" namespace="http://www.datacredito.com.co/services/ServicioIdentificacion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="ModificacionException">
+        <wsdlsoap:fault use="encoded" name="ModificacionException" namespace="http://www.datacredito.com.co/services/ServicioIdentificacion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="consultarEstadisticasDetalladas">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="consultarEstadisticasDetalladasRequest">
+        <wsdlsoap:body use="encoded" namespace="http://ws.id.dc.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="consultarEstadisticasDetalladasResponse">
+        <wsdlsoap:body use="encoded" namespace="http://www.datacredito.com.co/services/ServicioIdentificacion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="IdwsException">
+        <wsdlsoap:fault use="encoded" name="IdwsException" namespace="http://www.datacredito.com.co/services/ServicioIdentificacion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+      <wsdl:fault name="ParserXMLException">
+        <wsdlsoap:fault use="encoded" name="ParserXMLException" namespace="http://www.datacredito.com.co/services/ServicioIdentificacion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="consultarParametrizacionesCompletas">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="consultarParametrizacionesCompletasRequest">
+        <wsdlsoap:body use="encoded" namespace="http://ws.id.dc.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="consultarParametrizacionesCompletasResponse">
+        <wsdlsoap:body use="encoded" namespace="http://www.datacredito.com.co/services/ServicioIdentificacion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="IdwsException">
+        <wsdlsoap:fault use="encoded" name="IdwsException" namespace="http://www.datacredito.com.co/services/ServicioIdentificacion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="consultarParametrizaciones">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="consultarParametrizacionesRequest">
+        <wsdlsoap:body use="encoded" namespace="http://ws.id.dc.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="consultarParametrizacionesResponse">
+        <wsdlsoap:body use="encoded" namespace="http://www.datacredito.com.co/services/ServicioIdentificacion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="IdwsException">
+        <wsdlsoap:fault use="encoded" name="IdwsException" namespace="http://www.datacredito.com.co/services/ServicioIdentificacion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="validar">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="validarRequest">
+        <wsdlsoap:body use="encoded" namespace="http://ws.id.dc.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="validarResponse">
+        <wsdlsoap:body use="encoded" namespace="http://www.datacredito.com.co/services/ServicioIdentificacion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="IdwsException">
+        <wsdlsoap:fault use="encoded" name="IdwsException" namespace="http://www.datacredito.com.co/services/ServicioIdentificacion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="preguntas">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="preguntasRequest">
+        <wsdlsoap:body use="encoded" namespace="http://ws.id.dc.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="preguntasResponse">
+        <wsdlsoap:body use="encoded" namespace="http://www.datacredito.com.co/services/ServicioIdentificacion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="IdwsException">
+        <wsdlsoap:fault use="encoded" name="IdwsException" namespace="http://www.datacredito.com.co/services/ServicioIdentificacion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+      <wsdl:fault name="DAOException">
+        <wsdlsoap:fault use="encoded" name="DAOException" namespace="http://www.datacredito.com.co/services/ServicioIdentificacion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="verificar">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="verificarRequest">
+        <wsdlsoap:body use="encoded" namespace="http://ws.id.dc.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="verificarResponse">
+        <wsdlsoap:body use="encoded" namespace="http://www.datacredito.com.co/services/ServicioIdentificacion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="IdwsException">
+        <wsdlsoap:fault use="encoded" name="IdwsException" namespace="http://www.datacredito.com.co/services/ServicioIdentificacion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="consultarCodigosValidacion">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="consultarCodigosValidacionRequest">
+        <wsdlsoap:body use="encoded" namespace="http://ws.id.dc.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="consultarCodigosValidacionResponse">
+        <wsdlsoap:body use="encoded" namespace="http://www.datacredito.com.co/services/ServicioIdentificacion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="IdwsException">
+        <wsdlsoap:fault use="encoded" name="IdwsException" namespace="http://www.datacredito.com.co/services/ServicioIdentificacion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="consultarCodigosPreguntas">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="consultarCodigosPreguntasRequest">
+        <wsdlsoap:body use="encoded" namespace="http://ws.id.dc.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="consultarCodigosPreguntasResponse">
+        <wsdlsoap:body use="encoded" namespace="http://www.datacredito.com.co/services/ServicioIdentificacion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="IdwsException">
+        <wsdlsoap:fault use="encoded" name="IdwsException" namespace="http://www.datacredito.com.co/services/ServicioIdentificacion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="consultarParametro">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="consultarParametroRequest">
+        <wsdlsoap:body use="encoded" namespace="http://ws.id.dc.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="consultarParametroResponse">
+        <wsdlsoap:body use="encoded" namespace="http://www.datacredito.com.co/services/ServicioIdentificacion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="IdwsException">
+        <wsdlsoap:fault use="encoded" name="IdwsException" namespace="http://www.datacredito.com.co/services/ServicioIdentificacion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="consultarParametroParametrizaciones">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="consultarParametroParametrizacionesRequest">
+        <wsdlsoap:body use="encoded" namespace="http://ws.id.dc.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="consultarParametroParametrizacionesResponse">
+        <wsdlsoap:body use="encoded" namespace="http://www.datacredito.com.co/services/ServicioIdentificacion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="IdwsException">
+        <wsdlsoap:fault use="encoded" name="IdwsException" namespace="http://www.datacredito.com.co/services/ServicioIdentificacion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="consultarParametroParametrizaciones">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="consultarParametroParametrizacionesRequest1">
+        <wsdlsoap:body use="encoded" namespace="http://ws.id.dc.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="consultarParametroParametrizacionesResponse1">
+        <wsdlsoap:body use="encoded" namespace="http://www.datacredito.com.co/services/ServicioIdentificacion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="IdwsException">
+        <wsdlsoap:fault use="encoded" name="IdwsException" namespace="http://www.datacredito.com.co/services/ServicioIdentificacion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="consultarParametrizacion">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="consultarParametrizacionRequest">
+        <wsdlsoap:body use="encoded" namespace="http://ws.id.dc.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="consultarParametrizacionResponse">
+        <wsdlsoap:body use="encoded" namespace="http://www.datacredito.com.co/services/ServicioIdentificacion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="IdwsException">
+        <wsdlsoap:fault use="encoded" name="IdwsException" namespace="http://www.datacredito.com.co/services/ServicioIdentificacion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="consultarUltimoResultado">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="consultarUltimoResultadoRequest">
+        <wsdlsoap:body use="encoded" namespace="http://ws.id.dc.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="consultarUltimoResultadoResponse">
+        <wsdlsoap:body use="encoded" namespace="http://www.datacredito.com.co/services/ServicioIdentificacion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="IdwsException">
+        <wsdlsoap:fault use="encoded" name="IdwsException" namespace="http://www.datacredito.com.co/services/ServicioIdentificacion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="consultarSistemaAlertas">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="consultarSistemaAlertasRequest">
+        <wsdlsoap:body use="encoded" namespace="http://ws.id.dc.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="consultarSistemaAlertasResponse">
+        <wsdlsoap:body use="encoded" namespace="http://www.datacredito.com.co/services/ServicioIdentificacion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="IdwsException">
+        <wsdlsoap:fault use="encoded" name="IdwsException" namespace="http://www.datacredito.com.co/services/ServicioIdentificacion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="consultarListaEstadisticasGeneradas">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="consultarListaEstadisticasGeneradasRequest">
+        <wsdlsoap:body use="encoded" namespace="http://ws.id.dc.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="consultarListaEstadisticasGeneradasResponse">
+        <wsdlsoap:body use="encoded" namespace="http://www.datacredito.com.co/services/ServicioIdentificacion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="IdwsException">
+        <wsdlsoap:fault use="encoded" name="IdwsException" namespace="http://www.datacredito.com.co/services/ServicioIdentificacion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+      <wsdl:fault name="DAOException">
+        <wsdlsoap:fault use="encoded" name="DAOException" namespace="http://www.datacredito.com.co/services/ServicioIdentificacion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+      <wsdl:fault name="ParserXMLException">
+        <wsdlsoap:fault use="encoded" name="ParserXMLException" namespace="http://www.datacredito.com.co/services/ServicioIdentificacion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="consultarListaEstadisticasEncuestasGeneradas">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="consultarListaEstadisticasEncuestasGeneradasRequest">
+        <wsdlsoap:body use="encoded" namespace="http://ws.id.dc.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="consultarListaEstadisticasEncuestasGeneradasResponse">
+        <wsdlsoap:body use="encoded" namespace="http://www.datacredito.com.co/services/ServicioIdentificacion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="IdwsException">
+        <wsdlsoap:fault use="encoded" name="IdwsException" namespace="http://www.datacredito.com.co/services/ServicioIdentificacion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+      <wsdl:fault name="DAOException">
+        <wsdlsoap:fault use="encoded" name="DAOException" namespace="http://www.datacredito.com.co/services/ServicioIdentificacion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+      <wsdl:fault name="ParserXMLException">
+        <wsdlsoap:fault use="encoded" name="ParserXMLException" namespace="http://www.datacredito.com.co/services/ServicioIdentificacion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="adicionarRespuestaCuestionario">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="adicionarRespuestaCuestionarioRequest">
+        <wsdlsoap:body use="encoded" namespace="http://ws.id.dc.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="adicionarRespuestaCuestionarioResponse">
+        <wsdlsoap:body use="encoded" namespace="http://www.datacredito.com.co/services/ServicioIdentificacion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="IdwsException">
+        <wsdlsoap:fault use="encoded" name="IdwsException" namespace="http://www.datacredito.com.co/services/ServicioIdentificacion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+      <wsdl:fault name="DAOException">
+        <wsdlsoap:fault use="encoded" name="DAOException" namespace="http://www.datacredito.com.co/services/ServicioIdentificacion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="consultarEstadisticasEncuestasDetalladas">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="consultarEstadisticasEncuestasDetalladasRequest">
+        <wsdlsoap:body use="encoded" namespace="http://ws.id.dc.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="consultarEstadisticasEncuestasDetalladasResponse">
+        <wsdlsoap:body use="encoded" namespace="http://www.datacredito.com.co/services/ServicioIdentificacion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="IdwsException">
+        <wsdlsoap:fault use="encoded" name="IdwsException" namespace="http://www.datacredito.com.co/services/ServicioIdentificacion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+      <wsdl:fault name="ParserXMLException">
+        <wsdlsoap:fault use="encoded" name="ParserXMLException" namespace="http://www.datacredito.com.co/services/ServicioIdentificacion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="generarCodigoOTP">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="generarCodigoOTPRequest">
+        <wsdlsoap:body use="encoded" namespace="http://ws.id.dc.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="generarCodigoOTPResponse">
+        <wsdlsoap:body use="encoded" namespace="http://www.datacredito.com.co/services/ServicioIdentificacion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="IdwsException">
+        <wsdlsoap:fault use="encoded" name="IdwsException" namespace="http://www.datacredito.com.co/services/ServicioIdentificacion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+      <wsdl:fault name="DAOException">
+        <wsdlsoap:fault use="encoded" name="DAOException" namespace="http://www.datacredito.com.co/services/ServicioIdentificacion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="verificarCodigoOTP">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="verificarCodigoOTPRequest">
+        <wsdlsoap:body use="encoded" namespace="http://ws.id.dc.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="verificarCodigoOTPResponse">
+        <wsdlsoap:body use="encoded" namespace="http://www.datacredito.com.co/services/ServicioIdentificacion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="IdwsException">
+        <wsdlsoap:fault use="encoded" name="IdwsException" namespace="http://www.datacredito.com.co/services/ServicioIdentificacion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+      <wsdl:fault name="DAOException">
+        <wsdlsoap:fault use="encoded" name="DAOException" namespace="http://www.datacredito.com.co/services/ServicioIdentificacion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="iniciarTransaccionOTP">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="iniciarTransaccionOTPRequest">
+        <wsdlsoap:body use="encoded" namespace="http://ws.id.dc.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="iniciarTransaccionOTPResponse">
+        <wsdlsoap:body use="encoded" namespace="http://www.datacredito.com.co/services/ServicioIdentificacion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="IdwsException">
+        <wsdlsoap:fault use="encoded" name="IdwsException" namespace="http://www.datacredito.com.co/services/ServicioIdentificacion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+      <wsdl:fault name="DAOException">
+        <wsdlsoap:fault use="encoded" name="DAOException" namespace="http://www.datacredito.com.co/services/ServicioIdentificacion" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServicioIdentificacion">
+    <wsdl:port name="ServicioIdentificacion" binding="impl:ServicioIdentificacionSoapBinding">
+      <wsdlsoap:address location="http://172.24.14.7:8080/idws2/services/ServicioIdentificacion" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

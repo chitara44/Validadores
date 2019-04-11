@@ -1,0 +1,10 @@
+C:\desarrollos\WebApplication1 - copia\WebApplication1\bin\WebApplication1.dll.config
+C:\desarrollos\WebApplication1 - copia\WebApplication1\bin\WebApplication1.dll
+C:\desarrollos\WebApplication1 - copia\WebApplication1\bin\WebApplication1.pdb
+C:\desarrollos\WebApplication1 - copia\WebApplication1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\desarrollos\WebApplication1 - copia\WebApplication1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\desarrollos\WebApplication1 - copia\WebApplication1\obj\Debug\Validadores.csproj.CoreCompileInputs.cache
+C:\desarrollos\WebApplication1 - copia\WebApplication1\obj\Debug\Validadores.csproj.CopyComplete
+C:\desarrollos\WebApplication1 - copia\WebApplication1\obj\Debug\WebApplication1.dll
+C:\desarrollos\WebApplication1 - copia\WebApplication1\obj\Debug\WebApplication1.pdb
+C:\desarrollos\WebApplication1 - copia\WebApplication1\obj\Debug\Validadores.csprojAssemblyReference.cache
