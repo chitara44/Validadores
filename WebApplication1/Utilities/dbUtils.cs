@@ -47,13 +47,13 @@ namespace WebApplication1.Utilities
         //    return gano;
         //}
 
- 
+
 
         //public static int prInsertaSorteos(int idsorteo,  string numsTr, string numsRe, string fechaSor, bool winnerTr, bool winnerRe )
         //{
         //    int gano = 0;
         //    string trad = "Tr";
-    
+
         //    string reva = "Re";
         //    string nuevo = "SI";
         //    string ganador = "SI";
@@ -62,7 +62,7 @@ namespace WebApplication1.Utilities
         //    string wuinnerRe = "NO";
         //    try
         //    {
-                
+
         //        string[] lNumsTr = null;
         //        string[] lNumsRe = null;
         //        if (numsTr != String.Empty && numsRe != String.Empty)
@@ -170,45 +170,36 @@ namespace WebApplication1.Utilities
         //    return exito;
         //}
 
-        public static List<parametros> consultarParametros(string canal)
+        public static int isValidUser(string usuario, string password)
         {
-            List<parametros> parametros = new List<parametros>();
-            parametros param = new parametros();
+            int perfil = 0;
             try
             {
+                DataTable dt = new DataTable();
                 using (SqlConnection cn = new SqlConnection(Properties.Settings.Default.con))
                 {
-                    cn.Open();
-                    SqlCommand tsql = cn.CreateCommand();
-                    tsql.CommandText = "f_obtenerParametrosXcanal";
-                    tsql.CommandType = System.Data.CommandType.StoredProcedure;
-                    tsql.Parameters.Add(new System.Data.SqlClient.SqlParameter("canal", canal));
-                    using (SqlDataReader dr = tsql.ExecuteReader())
+                    StringBuilder sb = new StringBuilder("SELECT AppVentasMovistar.dbo.f_isValidLogin(", 500);
+                    sb.AppendFormat("N'{0}',N'{1}') as perfil", usuario, password);
+                    string sqlSelect = sb.ToString();
+                    SqlDataAdapter da = new SqlDataAdapter(sqlSelect, cn);
+                    da.Fill(dt);
+                    foreach (DataColumn col in dt.Columns)
                     {
-                        while (dr.Read())
+                        if (col.ColumnName == "perfil")
                         {
-
-                            param.Canal = Convert.ToString(dr["canal"]);
-                            param.Nom_Parametro = Convert.ToString(dr["Nom_Parametro"]);
-                            param.Val_Parametro = Convert.ToString(dr["Val_Parametro"]);
-                            param.Des_Parametro = Convert.ToString(dr["Des_Parametro"]);
-                            parametros.Add(param);
+                            perfil = Convert.ToInt16(dt.Rows[0][col].ToString());
                         }
-                        
                     }
-
                     cn.Close();
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Error: ", ex.Message);
-                parametros = null;
+                perfil = 0;
             }
-            return parametros;
+            return perfil;
         }
-
- 
 
         public static DataTable consultaParams( string canal)
         {
@@ -223,10 +214,6 @@ namespace WebApplication1.Utilities
             }
             return dt;
         }
-
-
-
-
 
         public static int masRecienteSorteo(DataTable dt, int col)
         {

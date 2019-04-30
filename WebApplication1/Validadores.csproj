@@ -115,8 +115,15 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Utilities\BusinessLogic.cs" />
+    <Compile Include="Utilities\Data.cs" />
+    <Compile Include="Utilities\EncryptingClass.cs" />
+    <Compile Include="Utilities\ServiceClient.cs" />
+    <Compile Include="Utilities\serviceRequesting.cs" />
+    <Compile Include="Utilities\Types.cs" />
     <Compile Include="Utilities\utilidades.cs" />
     <Compile Include="Utilities\dbUtils.cs" />
+    <Compile Include="Utilities\Utils.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

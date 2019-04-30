@@ -35,5 +35,11 @@ namespace WebApplication1.entities
             set { nombres = value; }
         }
 
+        private string apellidos = null;
+        public string Apellidos
+        {
+            get { return apellidos; }
+            set { apellidos = value; }
+        }
     }
 }

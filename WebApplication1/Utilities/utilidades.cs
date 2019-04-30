@@ -16,6 +16,18 @@ namespace WebApplication1.Utilities
             Re
         }
 
+        public enum TipoCons
+        {
+            Saldo = 1,
+            Cuotas = 2,
+            Detalles = 3,
+            DetailRes = 4
+        }
+
+
+
+
+
         /// <summary>
         /// funcion para obtener el valor de algun parametro desde una lista
         /// </summary>

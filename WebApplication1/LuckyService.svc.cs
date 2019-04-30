@@ -24,9 +24,10 @@ namespace WebApplication1
         public List<parametros> consultarparametros(string canal)
         {
             DataTable dt = new DataTable();
+
             List<parametros> parametros = new List<parametros>();
             
-            dbUtils.consultaParams(canal);
+            dt = dbUtils.consultaParams(canal);
             parametros = utilidades.ProcesarDT(dt);
             return parametros;
         }
@@ -40,9 +41,13 @@ namespace WebApplication1
         RequestFormat = WebMessageFormat.Json,
         ResponseFormat = WebMessageFormat.Json
         )]
-        public resValidaciones consultaEvidente(persona tipoPer)
+        public resValidaciones consultaEvidente(persona tipoPer)//,  string paramsUsuario)
         {
-            string canal = "APPVENTAS";
+            string paramsUsuario = "APPVENTAS|Naranjo|Ricardo|09/01/1998|CC|10013464";
+            string[] paramsUser = paramsUsuario.Split('|');
+
+
+            string canal = paramsUser[0];// "APPVENTAS";
             resValidaciones resVal = new resValidaciones();
             string[] paramsEV = null;
             DataTable dt = dbUtils.consultaParams(canal);
@@ -50,7 +55,7 @@ namespace WebApplication1
             //dbUtils.consultaParams(canal);
             lParams = utilidades.ProcesarDT(dt);
             paramsEV = utilidades.cargarParametrosEvidente(lParams);
-            evidente 
+            utilidades.CreateRequestEvidente();
 
             if (paramsEV != null)
             {
@@ -60,44 +65,6 @@ namespace WebApplication1
 
             return resVal;
         }
-
-        //[WebInvoke(
-        //Method = "POST",
-        //RequestFormat = WebMessageFormat.Json,
-        //ResponseFormat = WebMessageFormat.Json
-        //)]
-        //public bool prInsertaSorteo(int idSorteo, string numsTr, string numsRe, DateTime fecha, bool winnerTr, bool winnerRe )
-        //{
-        //    List<sorteos> LisSor = new List<sorteos>();
-        //    utilidades.tipos Tr = utilidades.tipos.Tr;
-        //    bool insercionOK = false;
-        //    string fechaS = fecha.Date.ToString();
-        //    int sorteo = 0;
-        //    sorteo = dbUtils.prInsertaSorteos(idSorteo, numsTr, numsRe, fechaS, winnerTr, winnerRe);
-        //    if (sorteo >= 0)
-        //    {
-        //        insercionOK = true;
-        //        sorteos draw = new sorteos();
-        //        for (int i = 0; i <= 1; i++)
-        //        {
-        //            if (Tr == utilidades.tipos.Tr && i == Convert.ToInt32(Tr))
-        //            {
-        //                draw = dbUtils.GetSorteoValues(idSorteo, "Tr");
-        //            }
-        //            else
-        //            {
-        //                draw = dbUtils.GetSorteoValues(idSorteo, "Re");
-        //            }
-        //            draw.Listas();
-        //            LisSor.Add(draw);
-        //        }
-        //        dbUtils.prInsertaCombos(LisSor);
-        //    }
-        //    return insercionOK;
-        //}
-
-
-       
 
        
     }
